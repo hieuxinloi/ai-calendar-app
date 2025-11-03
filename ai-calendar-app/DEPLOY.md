@@ -8,8 +8,8 @@
 # Tạo repository mới trên GitHub
 # https://github.com/new
 
-# Khởi tạo git (nếu chưa có)
-cd ai-calendar-app
+# Khởi tạo git trong thư mục ai-calendar-app (thư mục chứa package.json)
+cd "D:\FPT\EXE\AI Calendar\ai-calendar-app"
 git init
 git add .
 git commit -m "Initial commit"
@@ -19,6 +19,8 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git branch -M main
 git push -u origin main
 ```
+
+**⚠️ QUAN TRỌNG**: Repo root **PHẢI** là thư mục `ai-calendar-app` chứa `package.json`, KHÔNG phải thư mục parent!
 
 ---
 

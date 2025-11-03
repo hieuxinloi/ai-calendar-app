@@ -10,6 +10,21 @@ const payOS = new PayOS({
 });
 
 /**
+ * OPTIONS /api/payment/payos/webhook
+ * Handle CORS preflight requests
+ */
+export async function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  });
+}
+
+/**
  * GET /api/payment/payos/webhook
  * Webhook test endpoint - PayOS dùng GET để test webhook URL
  */
@@ -20,7 +35,13 @@ export async function GET(request: NextRequest) {
     message: "PayOS webhook endpoint is active",
     endpoint: "/api/payment/payos/webhook",
     method: "POST"
-  }, { status: 200 });
+  }, { 
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    }
+  });
 }
 
 /**
@@ -29,24 +50,43 @@ export async function GET(request: NextRequest) {
  */
 export async function POST(request: NextRequest) {
   try {
+    console.log("PayOS Webhook POST request received");
+    
     // Handle empty body (PayOS test request)
     let body;
     try {
       const text = await request.text();
+      console.log("Request body text:", text);
+      
       if (!text || text.trim() === '') {
         console.log("PayOS Webhook test request (empty body)");
         return NextResponse.json({
           success: true,
           message: "Webhook endpoint is active and ready to receive callbacks"
-        }, { status: 200 });
+        }, { 
+          status: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+          }
+        });
       }
       body = JSON.parse(text);
+      console.log("Parsed body:", body);
     } catch (parseError) {
-      console.log("PayOS Webhook test request or invalid JSON");
+      console.log("PayOS Webhook test request or invalid JSON:", parseError);
+      // PayOS có thể test với format đặc biệt, vẫn trả về 200
       return NextResponse.json({
         success: true,
-        message: "Webhook endpoint is active"
-      }, { status: 200 });
+        message: "Webhook endpoint is active",
+        note: "Received non-JSON or empty request (test)"
+      }, { 
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        }
+      });
     }
     
     // PayOS webhook data format
@@ -58,13 +98,19 @@ export async function POST(request: NextRequest) {
 
     console.log("PayOS Webhook received:", { code, desc, data });
 
-    // Handle test requests from PayOS
+    // Handle test requests from PayOS (có thể không có code hoặc data)
     if (!code && !data) {
-      console.log("PayOS Webhook test request");
+      console.log("PayOS Webhook test request (no code/data)");
       return NextResponse.json({
         success: true,
         message: "Webhook endpoint is active and ready"
-      }, { status: 200 });
+      }, { 
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        }
+      });
     }
 
     if (code !== '00' || !data) {

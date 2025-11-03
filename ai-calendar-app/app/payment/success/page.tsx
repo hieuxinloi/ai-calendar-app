@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -9,7 +9,7 @@ import Link from "next/link"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 
-export default function PaymentSuccessPage() {
+function PaymentSuccessPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const paymentId = searchParams.get("paymentId")
@@ -105,6 +105,21 @@ export default function PaymentSuccessPage() {
         </div>
       </Card>
     </div>
+  )
+}
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-4">
+          <Loader2 className="w-12 h-12 animate-spin text-primary" />
+          <p className="text-muted-foreground">Đang kiểm tra thanh toán...</p>
+        </div>
+      </div>
+    }>
+      <PaymentSuccessPageContent />
+    </Suspense>
   )
 }
 

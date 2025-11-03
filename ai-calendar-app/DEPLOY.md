@@ -59,8 +59,10 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3001
      ```
      NEXT_PUBLIC_SUPABASE_URL = https://dnjynpcgpkeggnevdnpm.supabase.co
      NEXT_PUBLIC_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRuanlucGNncGtlZ2duZXZkbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIxMDUzMTAsImV4cCI6MjA3NzY4MTMxMH0.jAr6T4kzAk3HqlYEaDdS23Y7jVgd4KVoiD8K8vB0wAg
+     NEXT_PUBLIC_SITE_URL = https://ai-calendar-app-v3.vercel.app
      ```
    - Select: ✅ "Production", ✅ "Preview", ✅ "Development"
+   - **⚠️ LƯU Ý**: `NEXT_PUBLIC_SITE_URL` dùng cho PayOS returnUrl và cancelUrl
 6. **Click** "Deploy"
 7. **Đợi** 2-3 phút build
 8. **Copy URL**: `https://your-app-name.vercel.app` ✨
@@ -86,31 +88,66 @@ vercel --prod
 Sau khi deploy xong, bạn sẽ có URL production:
 
 ```
-https://your-app-name.vercel.app
+https://ai-calendar-app-v3.vercel.app
 ```
+
+**⚠️ QUAN TRỌNG: Cấu hình Environment Variable trong Vercel**
+
+Trước khi cấu hình PayOS, bạn cần set biến môi trường `NEXT_PUBLIC_SITE_URL`:
+
+1. Vào **Vercel Dashboard** → Project của bạn → **Settings** → **Environment Variables**
+2. Thêm biến mới:
+   - **Key**: `NEXT_PUBLIC_SITE_URL`
+   - **Value**: `https://ai-calendar-app-v3.vercel.app`
+   - **Environment**: ✅ Production, ✅ Preview, ✅ Development
+3. **Click** "Save"
+4. **Redeploy** project (Vercel sẽ tự động redeploy hoặc bạn có thể click "Redeploy" từ Deployments)
+
+---
 
 **Webhook URL** sẽ là:
 ```
-https://your-app-name.vercel.app/api/payment/payos/webhook
+https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook
 ```
 
-**Làm theo:**
-1. Vào PayOS Dashboard: https://my.payos.vn
-2. Vào **"Kênh thanh toán"** → Click kênh của bạn
-3. Tìm **"Webhook Url"**
-4. **Paste** URL: `https://your-app-name.vercel.app/api/payment/payos/webhook`
-5. **Click** "Lưu"
-6. PayOS sẽ tự test → Phải thấy ✅ xanh!
+**Cấu hình PayOS Webhook:**
+
+1. **Đăng nhập** PayOS Dashboard: https://my.payos.vn
+2. Vào **"Kênh thanh toán"** → Click vào kênh của bạn
+3. Tìm mục **"Webhook Url"** (thường ở phần "Cài đặt kênh" hoặc "Webhook & Callback")
+4. **Paste** URL webhook:
+   ```
+   https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook
+   ```
+5. **Click** "Lưu" hoặc "Cập nhật"
+6. PayOS sẽ tự động test webhook → Phải thấy ✅ **"Test thành công"** hoặc trạng thái xanh!
+
+**🔍 Lưu ý:**
+- URL phải bắt đầu bằng `https://` (không dùng `http://`)
+- Không có dấu `/` ở cuối URL
+- Sau khi lưu, PayOS sẽ gửi một request test đến webhook của bạn
+- Kiểm tra Vercel Logs để xem webhook có nhận được request không
 
 ---
 
 ### Bước 5: Test Production
 
-1. **Truy cập**: `https://your-app-name.vercel.app`
-2. **Đăng ký** tài khoản mới
+1. **Truy cập**: `https://ai-calendar-app-v3.vercel.app`
+2. **Đăng ký** tài khoản mới hoặc đăng nhập
 3. **Vào** `/payment?plan=pro`
-4. **Click** "Thanh toán PayOS"
-5. **Test** thanh toán với PayOS sandbox
+4. **Click** "Thanh toán PayOS (Tự động)"
+5. **Kiểm tra**:
+   - Redirect đến PayOS checkout page ✅
+   - Thanh toán thành công → Redirect về `/payment/success` ✅
+   - Webhook nhận được callback từ PayOS ✅
+   - Subscription tự động được kích hoạt ✅
+
+**Test Webhook thủ công:**
+```bash
+curl -X POST https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook \
+  -H "Content-Type: application/json" \
+  -d '{"code":"00","desc":"Success","data":{"orderCode":12345678,"amount":99000}}'
+```
 
 ---
 
@@ -147,15 +184,38 @@ npm install
 
 ### PayOS Webhook 404
 
-**Lỗi**: Webhook không nhận được
-- Check URL: Phải bắt đầu bằng `https://`
-- Check PayOS Dashboard có lưu URL chưa
-- Test webhook thủ công:
-  ```bash
-  curl -X POST https://your-app.vercel.app/api/payment/payos/webhook \
-    -H "Content-Type: application/json" \
-    -d '{"code":"00","desc":"Test","data":{"orderCode":123,"amount":99000}}'
-  ```
+**Lỗi**: Webhook không nhận được (404 Not Found)
+
+**Nguyên nhân thường gặp:**
+1. PayOS test webhook bằng GET request, nhưng route chỉ có POST handler
+2. Code chưa được deploy lên Vercel
+3. URL không đúng format
+
+**Giải pháp:**
+1. ✅ **Đảm bảo route có cả GET và POST handlers** (đã được thêm trong code)
+2. **Redeploy code lên Vercel:**
+   ```bash
+   # Commit và push code mới
+   git add .
+   git commit -m "Fix PayOS webhook: Add GET handler for testing"
+   git push origin main
+   ```
+   Vercel sẽ tự động deploy sau khi push
+3. **Kiểm tra URL:**
+   - Phải bắt đầu bằng `https://`
+   - Không có dấu `/` ở cuối
+   - URL đúng: `https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook`
+4. **Test webhook sau khi deploy:**
+   ```bash
+   # Test GET request (PayOS test)
+   curl https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook
+   
+   # Test POST request
+   curl -X POST https://ai-calendar-app-v3.vercel.app/api/payment/payos/webhook \
+     -H "Content-Type: application/json" \
+     -d '{"code":"00","desc":"Test","data":{"orderCode":123,"amount":99000}}'
+   ```
+5. **Kiểm tra Vercel Logs** để xem webhook có nhận được requests không
 
 ---
 
@@ -189,7 +249,7 @@ npm install
 
 ## 🎉 Hoàn thành!
 
-App của bạn đã live tại: `https://your-app-name.vercel.app`
+App của bạn đã live tại: `https://ai-calendar-app-v3.vercel.app`
 
 **Features:**
 - ✅ Next.js 15 + React 18

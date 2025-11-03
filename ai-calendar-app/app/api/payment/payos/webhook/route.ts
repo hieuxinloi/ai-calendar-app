@@ -10,12 +10,44 @@ const payOS = new PayOS({
 });
 
 /**
+ * GET /api/payment/payos/webhook
+ * Webhook test endpoint - PayOS dùng GET để test webhook URL
+ */
+export async function GET(request: NextRequest) {
+  console.log("PayOS Webhook GET request (test):", request.url);
+  return NextResponse.json({
+    success: true,
+    message: "PayOS webhook endpoint is active",
+    endpoint: "/api/payment/payos/webhook",
+    method: "POST"
+  }, { status: 200 });
+}
+
+/**
  * POST /api/payment/payos/webhook
  * Webhook endpoint nhận callback từ PayOS
  */
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // Handle empty body (PayOS test request)
+    let body;
+    try {
+      const text = await request.text();
+      if (!text || text.trim() === '') {
+        console.log("PayOS Webhook test request (empty body)");
+        return NextResponse.json({
+          success: true,
+          message: "Webhook endpoint is active and ready to receive callbacks"
+        }, { status: 200 });
+      }
+      body = JSON.parse(text);
+    } catch (parseError) {
+      console.log("PayOS Webhook test request or invalid JSON");
+      return NextResponse.json({
+        success: true,
+        message: "Webhook endpoint is active"
+      }, { status: 200 });
+    }
     
     // PayOS webhook data format
     const {
@@ -25,6 +57,15 @@ export async function POST(request: NextRequest) {
     } = body;
 
     console.log("PayOS Webhook received:", { code, desc, data });
+
+    // Handle test requests from PayOS
+    if (!code && !data) {
+      console.log("PayOS Webhook test request");
+      return NextResponse.json({
+        success: true,
+        message: "Webhook endpoint is active and ready"
+      }, { status: 200 });
+    }
 
     if (code !== '00' || !data) {
       console.error("PayOS webhook error:", { code, desc });

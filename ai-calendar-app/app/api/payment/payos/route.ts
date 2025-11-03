@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
     const cancelUrl = `${baseUrl}/payment?plan=${plan}`;
 
     // Create payment link using PayOS SDK
-    const paymentLinkData = await payOS.createPaymentLink({
+    const paymentLinkData = await payOS.paymentRequests.create({
       orderCode,
       amount,
       description: `Thanh toan goi ${plan.toUpperCase()} - Ma GD: ${payment.id.slice(0, 8).toUpperCase()}`,
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     await supabase
       .from('payments')
       .update({
-        transaction_id: paymentLinkData.id.toString(),
+        transaction_id: paymentLinkData.paymentLinkId,
         qr_code: JSON.stringify(paymentLinkData),
         metadata: {
           ...(payment.metadata as any),

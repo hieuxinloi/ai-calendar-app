@@ -3,11 +3,11 @@ import { createClient } from "@/lib/supabase/server";
 import { PayOS } from "@payos/node";
 
 // PayOS configuration
-const payOS = new PayOS(
-  "ab3137a1-e439-4548-b91f-03ef56dff5c0",
-  "8ca0f845-05d5-48f1-a030-00752eba3732",
-  "f75e963b27183304a4071eadacffc21d29658753f18ae9be1a70c736b60baa58"
-);
+const payOS = new PayOS({
+  clientId: "ab3137a1-e439-4548-b91f-03ef56dff5c0",
+  apiKey: "8ca0f845-05d5-48f1-a030-00752eba3732",
+  checksumKey: "f75e963b27183304a4071eadacffc21d29658753f18ae9be1a70c736b60baa58"
+});
 
 /**
  * POST /api/payment/payos/webhook

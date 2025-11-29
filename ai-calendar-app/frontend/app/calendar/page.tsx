@@ -113,10 +113,11 @@ export default function CalendarPage() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-6">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-6">
-          {/* Main Calendar Area */}
-          <div className="space-y-6">
+      <div className="w-full overflow-x-auto">
+        <div className="container mx-auto px-4 py-6 min-w-[1200px]">
+          <div className="grid lg:grid-cols-[1fr_320px] gap-6">
+            {/* Main Calendar Area */}
+            <div className="space-y-6">
             {/* Calendar Controls */}
             <Card className="p-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -267,6 +268,7 @@ export default function CalendarPage() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Add Task Dialog */}
       <AddTaskDialog 
@@ -278,7 +280,6 @@ export default function CalendarPage() {
           window.location.reload()
         }}
       />
-      </div>
     </div>
   )
 }

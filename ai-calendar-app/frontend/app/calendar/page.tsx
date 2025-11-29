@@ -278,6 +278,7 @@ export default function CalendarPage() {
           window.location.reload()
         }}
       />
+      </div>
     </div>
   )
 }

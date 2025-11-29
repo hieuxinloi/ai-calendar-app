@@ -117,8 +117,8 @@ export function CalendarGridEnhanced({
   // Month View - Google Calendar style với tasks hiển thị như events
   if (view === "month") {
     return (
-      <Card className="p-4 overflow-x-auto">
-        <div className="grid grid-cols-7 gap-px bg-border min-w-[700px]">
+      <Card className="p-4 overflow-hidden">
+        <div className="grid grid-cols-7 gap-px bg-border">
           {/* Week day headers */}
           {weekDays.map((day) => (
             <div 
@@ -139,7 +139,7 @@ export function CalendarGridEnhanced({
               <div
                 key={index}
                 className={cn(
-                  "bg-background min-h-[100px] p-1 border-r border-b border-border",
+                  "bg-background min-h-[80px] sm:min-h-[100px] p-1 border-r border-b border-border",
                   "hover:bg-muted/30 transition-colors",
                   isCurrentDay && "bg-primary/5",
                   isSelectedDay && "ring-2 ring-primary ring-inset"
@@ -212,8 +212,8 @@ export function CalendarGridEnhanced({
     const hours = Array.from({ length: 24 }, (_, i) => i)
 
     return (
-      <Card className="p-0 overflow-x-auto">
-        <div className="grid grid-cols-8 border-b border-border min-w-[800px]">
+      <Card className="p-0 overflow-hidden">
+        <div className="grid grid-cols-8 border-b border-border">
           {/* Time column header */}
           <div className="border-r border-border p-2 bg-muted/30" />
           
@@ -296,9 +296,9 @@ export function CalendarGridEnhanced({
   const hours = Array.from({ length: 24 }, (_, i) => i)
 
   return (
-    <Card className="p-0 overflow-x-auto">
+    <Card className="p-0 overflow-hidden">
       {/* Day header */}
-      <div className="p-4 border-b border-border bg-muted/30 min-w-[600px]">
+      <div className="p-4 border-b border-border bg-muted/30">
         <div className="text-2xl font-bold mb-1">
           {selectedDate.toLocaleDateString("vi-VN", { weekday: "long", day: "numeric", month: "long" })}
         </div>

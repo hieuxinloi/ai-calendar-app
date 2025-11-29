@@ -113,9 +113,8 @@ export default function CalendarPage() {
         </div>
       </header>
 
-      <div className="w-full overflow-x-auto">
-        <div className="container mx-auto px-4 py-6 min-w-[1200px]">
-          <div className="grid lg:grid-cols-[1fr_320px] gap-6">
+      <div className="container mx-auto px-4 py-6">
+        <div className="grid lg:grid-cols-[1fr_320px] gap-6">
             {/* Main Calendar Area */}
             <div className="space-y-6">
             {/* Calendar Controls */}
@@ -267,7 +266,6 @@ export default function CalendarPage() {
             </Card>
           </div>
         </div>
-      </div>
       </div>
 
       {/* Add Task Dialog */}

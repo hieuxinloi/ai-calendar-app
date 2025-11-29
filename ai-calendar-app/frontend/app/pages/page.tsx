@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sidebar } from "@/components/sidebar"
 import { UserMenu } from "@/components/auth/user-menu"
+import { ThemeSelector } from "@/components/theme-selector"
 import { 
   FileText, 
   Plus, 
@@ -120,6 +121,7 @@ export default function PagesPage() {
                   <MessageCircle className="w-6 h-6" />
                 </Button>
               </Link>
+              <ThemeSelector />
               <UserMenu />
             </div>
           </div>

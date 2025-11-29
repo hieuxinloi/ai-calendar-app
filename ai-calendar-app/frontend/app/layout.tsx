@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ToasterProvider } from "@/components/toaster";
 import { ErrorSuppressor } from "@/components/error-suppressor";
+import { ThemeProvider } from "@/lib/theme-provider";
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -86,9 +87,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <ErrorSuppressor />
-        {children}
-        <ToasterProvider />
+        <ThemeProvider>
+          <ErrorSuppressor />
+          {children}
+          <ToasterProvider />
+        </ThemeProvider>
       </body>
     </html>
   );

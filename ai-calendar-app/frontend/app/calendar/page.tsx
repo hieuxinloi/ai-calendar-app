@@ -23,6 +23,7 @@ import { AddTaskDialog } from "@/components/add-task-dialog"
 import { MoodSelector } from "@/components/mood-selector"
 import { LunarCalendar } from "@/components/lunar-calendar"
 import { UserMenu } from "@/components/auth/user-menu"
+import { ThemeSelector } from "@/components/theme-selector"
 import Link from "next/link"
 
 export default function CalendarPage() {
@@ -101,6 +102,7 @@ export default function CalendarPage() {
                 <MessageCircle className="w-4 h-4" />
               </Button>
             </Link>
+            <ThemeSelector />
             <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
               {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>

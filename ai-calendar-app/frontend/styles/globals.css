@@ -361,3 +361,329 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Theme Definitions - Đặc sắc và sinh động */
+
+/* Ocean Theme - Xanh dương đại dương */
+.theme-ocean {
+  --background: oklch(0.98 0.01 220);
+  --foreground: oklch(0.15 0.02 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 240);
+  --primary: oklch(0.55 0.2 220);
+  --primary-foreground: oklch(0.98 0.01 220);
+  --secondary: oklch(0.7 0.15 200);
+  --secondary-foreground: oklch(0.98 0.01 220);
+  --muted: oklch(0.96 0.01 220);
+  --muted-foreground: oklch(0.4 0.01 240);
+  --accent: oklch(0.65 0.18 190);
+  --accent-foreground: oklch(0.15 0.02 240);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 220);
+  --border: oklch(0.92 0.01 220);
+  --input: oklch(0.92 0.01 220);
+  --ring: oklch(0.55 0.2 220);
+  --chart-1: oklch(0.55 0.2 220);
+  --chart-2: oklch(0.7 0.15 200);
+  --chart-3: oklch(0.65 0.18 190);
+  --chart-4: oklch(0.6 0.16 210);
+  --chart-5: oklch(0.68 0.17 180);
+  --sidebar: oklch(0.98 0.01 220);
+  --sidebar-foreground: oklch(0.15 0.02 240);
+  --sidebar-primary: oklch(0.55 0.2 220);
+  --sidebar-primary-foreground: oklch(0.98 0.01 220);
+  --sidebar-accent: oklch(0.96 0.01 220);
+  --sidebar-accent-foreground: oklch(0.15 0.02 240);
+  --sidebar-border: oklch(0.92 0.01 220);
+  --sidebar-ring: oklch(0.55 0.2 220);
+}
+
+/* Sunset Theme - Cam hồng hoàng hôn */
+.theme-sunset {
+  --background: oklch(0.99 0.01 50);
+  --foreground: oklch(0.2 0.02 30);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 30);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 30);
+  --primary: oklch(0.6 0.2 30);
+  --primary-foreground: oklch(0.99 0.01 50);
+  --secondary: oklch(0.75 0.18 350);
+  --secondary-foreground: oklch(0.99 0.01 50);
+  --muted: oklch(0.97 0.01 40);
+  --muted-foreground: oklch(0.45 0.01 30);
+  --accent: oklch(0.7 0.2 20);
+  --accent-foreground: oklch(0.2 0.02 30);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.01 50);
+  --border: oklch(0.94 0.01 40);
+  --input: oklch(0.94 0.01 40);
+  --ring: oklch(0.6 0.2 30);
+  --chart-1: oklch(0.6 0.2 30);
+  --chart-2: oklch(0.75 0.18 350);
+  --chart-3: oklch(0.7 0.2 20);
+  --chart-4: oklch(0.65 0.19 40);
+  --chart-5: oklch(0.72 0.18 10);
+  --sidebar: oklch(0.99 0.01 50);
+  --sidebar-foreground: oklch(0.2 0.02 30);
+  --sidebar-primary: oklch(0.6 0.2 30);
+  --sidebar-primary-foreground: oklch(0.99 0.01 50);
+  --sidebar-accent: oklch(0.97 0.01 40);
+  --sidebar-accent-foreground: oklch(0.2 0.02 30);
+  --sidebar-border: oklch(0.94 0.01 40);
+  --sidebar-ring: oklch(0.6 0.2 30);
+}
+
+/* Forest Theme - Xanh lá rừng */
+.theme-forest {
+  --background: oklch(0.98 0.01 140);
+  --foreground: oklch(0.15 0.02 150);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 150);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 150);
+  --primary: oklch(0.5 0.18 150);
+  --primary-foreground: oklch(0.98 0.01 140);
+  --secondary: oklch(0.65 0.16 160);
+  --secondary-foreground: oklch(0.98 0.01 140);
+  --muted: oklch(0.96 0.01 140);
+  --muted-foreground: oklch(0.4 0.01 150);
+  --accent: oklch(0.6 0.17 130);
+  --accent-foreground: oklch(0.15 0.02 150);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 140);
+  --border: oklch(0.92 0.01 140);
+  --input: oklch(0.92 0.01 140);
+  --ring: oklch(0.5 0.18 150);
+  --chart-1: oklch(0.5 0.18 150);
+  --chart-2: oklch(0.65 0.16 160);
+  --chart-3: oklch(0.6 0.17 130);
+  --chart-4: oklch(0.55 0.17 140);
+  --chart-5: oklch(0.62 0.16 145);
+  --sidebar: oklch(0.98 0.01 140);
+  --sidebar-foreground: oklch(0.15 0.02 150);
+  --sidebar-primary: oklch(0.5 0.18 150);
+  --sidebar-primary-foreground: oklch(0.98 0.01 140);
+  --sidebar-accent: oklch(0.96 0.01 140);
+  --sidebar-accent-foreground: oklch(0.15 0.02 150);
+  --sidebar-border: oklch(0.92 0.01 140);
+  --sidebar-ring: oklch(0.5 0.18 150);
+}
+
+/* Purple Dream Theme - Tím mơ mộng */
+.theme-purple {
+  --background: oklch(0.98 0.01 300);
+  --foreground: oklch(0.18 0.02 290);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 290);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 290);
+  --primary: oklch(0.55 0.2 280);
+  --primary-foreground: oklch(0.98 0.01 300);
+  --secondary: oklch(0.7 0.18 310);
+  --secondary-foreground: oklch(0.98 0.01 300);
+  --muted: oklch(0.96 0.01 300);
+  --muted-foreground: oklch(0.42 0.01 290);
+  --accent: oklch(0.65 0.19 270);
+  --accent-foreground: oklch(0.18 0.02 290);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 300);
+  --border: oklch(0.92 0.01 300);
+  --input: oklch(0.92 0.01 300);
+  --ring: oklch(0.55 0.2 280);
+  --chart-1: oklch(0.55 0.2 280);
+  --chart-2: oklch(0.7 0.18 310);
+  --chart-3: oklch(0.65 0.19 270);
+  --chart-4: oklch(0.6 0.19 290);
+  --chart-5: oklch(0.68 0.18 300);
+  --sidebar: oklch(0.98 0.01 300);
+  --sidebar-foreground: oklch(0.18 0.02 290);
+  --sidebar-primary: oklch(0.55 0.2 280);
+  --sidebar-primary-foreground: oklch(0.98 0.01 300);
+  --sidebar-accent: oklch(0.96 0.01 300);
+  --sidebar-accent-foreground: oklch(0.18 0.02 290);
+  --sidebar-border: oklch(0.92 0.01 300);
+  --sidebar-ring: oklch(0.55 0.2 280);
+}
+
+/* Cherry Blossom Theme - Hồng anh đào */
+.theme-cherry {
+  --background: oklch(0.99 0.01 350);
+  --foreground: oklch(0.2 0.02 340);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 340);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 340);
+  --primary: oklch(0.65 0.18 350);
+  --primary-foreground: oklch(0.99 0.01 350);
+  --secondary: oklch(0.75 0.16 10);
+  --secondary-foreground: oklch(0.99 0.01 350);
+  --muted: oklch(0.97 0.01 350);
+  --muted-foreground: oklch(0.45 0.01 340);
+  --accent: oklch(0.7 0.17 360);
+  --accent-foreground: oklch(0.2 0.02 340);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.01 350);
+  --border: oklch(0.94 0.01 350);
+  --input: oklch(0.94 0.01 350);
+  --ring: oklch(0.65 0.18 350);
+  --chart-1: oklch(0.65 0.18 350);
+  --chart-2: oklch(0.75 0.16 10);
+  --chart-3: oklch(0.7 0.17 360);
+  --chart-4: oklch(0.68 0.17 340);
+  --chart-5: oklch(0.72 0.16 5);
+  --sidebar: oklch(0.99 0.01 350);
+  --sidebar-foreground: oklch(0.2 0.02 340);
+  --sidebar-primary: oklch(0.65 0.18 350);
+  --sidebar-primary-foreground: oklch(0.99 0.01 350);
+  --sidebar-accent: oklch(0.97 0.01 350);
+  --sidebar-accent-foreground: oklch(0.2 0.02 340);
+  --sidebar-border: oklch(0.94 0.01 350);
+  --sidebar-ring: oklch(0.65 0.18 350);
+}
+
+/* Midnight Theme - Nửa đêm */
+.theme-midnight {
+  --background: oklch(0.12 0.01 250);
+  --foreground: oklch(0.95 0.005 240);
+  --card: oklch(0.16 0.01 250);
+  --card-foreground: oklch(0.95 0.005 240);
+  --popover: oklch(0.16 0.01 250);
+  --popover-foreground: oklch(0.95 0.005 240);
+  --primary: oklch(0.6 0.18 250);
+  --primary-foreground: oklch(0.12 0.01 250);
+  --secondary: oklch(0.3 0.05 260);
+  --secondary-foreground: oklch(0.95 0.005 240);
+  --muted: oklch(0.2 0.01 250);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --accent: oklch(0.5 0.15 240);
+  --accent-foreground: oklch(0.95 0.005 240);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.95 0.005 240);
+  --border: oklch(0.25 0.01 250);
+  --input: oklch(0.25 0.01 250);
+  --ring: oklch(0.6 0.18 250);
+  --chart-1: oklch(0.6 0.18 250);
+  --chart-2: oklch(0.5 0.15 240);
+  --chart-3: oklch(0.55 0.16 260);
+  --chart-4: oklch(0.58 0.17 245);
+  --chart-5: oklch(0.52 0.15 255);
+  --sidebar: oklch(0.16 0.01 250);
+  --sidebar-foreground: oklch(0.95 0.005 240);
+  --sidebar-primary: oklch(0.6 0.18 250);
+  --sidebar-primary-foreground: oklch(0.12 0.01 250);
+  --sidebar-accent: oklch(0.2 0.01 250);
+  --sidebar-accent-foreground: oklch(0.95 0.005 240);
+  --sidebar-border: oklch(0.25 0.01 250);
+  --sidebar-ring: oklch(0.6 0.18 250);
+}
+
+/* Aurora Theme - Cầu vồng cực quang */
+.theme-aurora {
+  --background: oklch(0.98 0.01 200);
+  --foreground: oklch(0.15 0.02 220);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 220);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 220);
+  --primary: oklch(0.55 0.2 180);
+  --primary-foreground: oklch(0.98 0.01 200);
+  --secondary: oklch(0.65 0.18 200);
+  --secondary-foreground: oklch(0.98 0.01 200);
+  --muted: oklch(0.96 0.01 200);
+  --muted-foreground: oklch(0.4 0.01 220);
+  --accent: oklch(0.6 0.19 160);
+  --accent-foreground: oklch(0.15 0.02 220);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 200);
+  --border: oklch(0.92 0.01 200);
+  --input: oklch(0.92 0.01 200);
+  --ring: oklch(0.55 0.2 180);
+  --chart-1: oklch(0.55 0.2 180);
+  --chart-2: oklch(0.65 0.18 200);
+  --chart-3: oklch(0.6 0.19 160);
+  --chart-4: oklch(0.58 0.19 190);
+  --chart-5: oklch(0.62 0.18 170);
+  --sidebar: oklch(0.98 0.01 200);
+  --sidebar-foreground: oklch(0.15 0.02 220);
+  --sidebar-primary: oklch(0.55 0.2 180);
+  --sidebar-primary-foreground: oklch(0.98 0.01 200);
+  --sidebar-accent: oklch(0.96 0.01 200);
+  --sidebar-accent-foreground: oklch(0.15 0.02 220);
+  --sidebar-border: oklch(0.92 0.01 200);
+  --sidebar-ring: oklch(0.55 0.2 180);
+}
+
+/* Emerald Theme - Ngọc lục bảo */
+.theme-emerald {
+  --background: oklch(0.98 0.01 160);
+  --foreground: oklch(0.15 0.02 170);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 170);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 170);
+  --primary: oklch(0.52 0.19 165);
+  --primary-foreground: oklch(0.98 0.01 160);
+  --secondary: oklch(0.68 0.17 150);
+  --secondary-foreground: oklch(0.98 0.01 160);
+  --muted: oklch(0.96 0.01 160);
+  --muted-foreground: oklch(0.4 0.01 170);
+  --accent: oklch(0.62 0.18 155);
+  --accent-foreground: oklch(0.15 0.02 170);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0.01 160);
+  --border: oklch(0.92 0.01 160);
+  --input: oklch(0.92 0.01 160);
+  --ring: oklch(0.52 0.19 165);
+  --chart-1: oklch(0.52 0.19 165);
+  --chart-2: oklch(0.68 0.17 150);
+  --chart-3: oklch(0.62 0.18 155);
+  --chart-4: oklch(0.58 0.18 160);
+  --chart-5: oklch(0.6 0.18 158);
+  --sidebar: oklch(0.98 0.01 160);
+  --sidebar-foreground: oklch(0.15 0.02 170);
+  --sidebar-primary: oklch(0.52 0.19 165);
+  --sidebar-primary-foreground: oklch(0.98 0.01 160);
+  --sidebar-accent: oklch(0.96 0.01 160);
+  --sidebar-accent-foreground: oklch(0.15 0.02 170);
+  --sidebar-border: oklch(0.92 0.01 160);
+  --sidebar-ring: oklch(0.52 0.19 165);
+}
+
+/* Rose Theme - Hồng hoa hồng */
+.theme-rose {
+  --background: oklch(0.99 0.01 10);
+  --foreground: oklch(0.2 0.02 5);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 5);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 5);
+  --primary: oklch(0.6 0.19 5);
+  --primary-foreground: oklch(0.99 0.01 10);
+  --secondary: oklch(0.72 0.17 350);
+  --secondary-foreground: oklch(0.99 0.01 10);
+  --muted: oklch(0.97 0.01 10);
+  --muted-foreground: oklch(0.45 0.01 5);
+  --accent: oklch(0.68 0.18 0);
+  --accent-foreground: oklch(0.2 0.02 5);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.01 10);
+  --border: oklch(0.94 0.01 10);
+  --input: oklch(0.94 0.01 10);
+  --ring: oklch(0.6 0.19 5);
+  --chart-1: oklch(0.6 0.19 5);
+  --chart-2: oklch(0.72 0.17 350);
+  --chart-3: oklch(0.68 0.18 0);
+  --chart-4: oklch(0.65 0.18 10);
+  --chart-5: oklch(0.7 0.17 355);
+  --sidebar: oklch(0.99 0.01 10);
+  --sidebar-foreground: oklch(0.2 0.02 5);
+  --sidebar-primary: oklch(0.6 0.19 5);
+  --sidebar-primary-foreground: oklch(0.99 0.01 10);
+  --sidebar-accent: oklch(0.97 0.01 10);
+  --sidebar-accent-foreground: oklch(0.2 0.02 5);
+  --sidebar-border: oklch(0.94 0.01 10);
+  --sidebar-ring: oklch(0.6 0.19 5);
+}

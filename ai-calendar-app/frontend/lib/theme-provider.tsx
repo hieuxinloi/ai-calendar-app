@@ -4,15 +4,31 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
 
 export type Theme = 
   | "default"
-  | "ocean"
-  | "sunset"
-  | "forest"
-  | "purple"
-  | "cherry"
-  | "midnight"
-  | "aurora"
-  | "emerald"
-  | "rose"
+  | "neon-cyberpunk"
+  | "pastel-dream"
+  | "minimalist-zen"
+  | "ocean-depths"
+  | "sunset-paradise"
+  | "forest-canopy"
+  | "lavender-fields"
+  | "midnight-galaxy"
+  | "cherry-blossom"
+  | "desert-mirage"
+  | "arctic-frost"
+  | "tropical-paradise"
+  | "vintage-paper"
+  | "electric-storm"
+  | "mint-fresh"
+  | "golden-hour"
+  | "crystal-palace"
+  | "coffee-shop"
+  | "neon-noir"
+  | "meadow-spring"
+  | "steampunk-brass"
+  | "aurora-borealis"
+  | "candy-shop"
+  | "monochrome-elegance"
+  | "rainbow-spectrum"
 
 interface ThemeContextType {
   theme: Theme
@@ -31,6 +47,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     if (savedTheme) {
       setThemeState(savedTheme)
       applyTheme(savedTheme)
+    } else {
+      // Apply default theme on initial mount
+      applyTheme("default")
     }
   }, [])
 
@@ -38,18 +57,35 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement
     
     // Remove all theme classes
-    root.classList.remove(
+    const allThemes = [
       "theme-default",
-      "theme-ocean",
-      "theme-sunset",
-      "theme-forest",
-      "theme-purple",
-      "theme-cherry",
-      "theme-midnight",
-      "theme-aurora",
-      "theme-emerald",
-      "theme-rose"
-    )
+      "theme-neon-cyberpunk",
+      "theme-pastel-dream",
+      "theme-minimalist-zen",
+      "theme-ocean-depths",
+      "theme-sunset-paradise",
+      "theme-forest-canopy",
+      "theme-lavender-fields",
+      "theme-midnight-galaxy",
+      "theme-cherry-blossom",
+      "theme-desert-mirage",
+      "theme-arctic-frost",
+      "theme-tropical-paradise",
+      "theme-vintage-paper",
+      "theme-electric-storm",
+      "theme-mint-fresh",
+      "theme-golden-hour",
+      "theme-crystal-palace",
+      "theme-coffee-shop",
+      "theme-neon-noir",
+      "theme-meadow-spring",
+      "theme-steampunk-brass",
+      "theme-aurora-borealis",
+      "theme-candy-shop",
+      "theme-monochrome-elegance",
+      "theme-rainbow-spectrum"
+    ]
+    root.classList.remove(...allThemes)
     
     // Add new theme class (only if not default)
     if (newTheme !== "default") {
@@ -65,10 +101,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     applyTheme(newTheme)
   }
 
-  if (!mounted) {
-    return <>{children}</>
-  }
-
+  // Always provide the context, even before mounting
+  // This prevents the "useTheme must be used within a ThemeProvider" error
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}

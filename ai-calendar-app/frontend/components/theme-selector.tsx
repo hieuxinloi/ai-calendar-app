@@ -12,16 +12,32 @@ import { Palette, Check } from "lucide-react"
 import { cn } from "@/shared/utils/utils"
 
 const themes = [
-  { id: "default" as const, name: "Mặc định", color: "bg-gradient-to-br from-blue-400 to-pink-400" },
-  { id: "ocean" as const, name: "Đại dương", color: "bg-gradient-to-br from-cyan-400 to-blue-500" },
-  { id: "sunset" as const, name: "Hoàng hôn", color: "bg-gradient-to-br from-orange-400 to-pink-500" },
-  { id: "forest" as const, name: "Rừng xanh", color: "bg-gradient-to-br from-green-400 to-emerald-500" },
-  { id: "purple" as const, name: "Tím mơ", color: "bg-gradient-to-br from-purple-400 to-indigo-500" },
-  { id: "cherry" as const, name: "Anh đào", color: "bg-gradient-to-br from-pink-400 to-rose-500" },
-  { id: "midnight" as const, name: "Nửa đêm", color: "bg-gradient-to-br from-slate-700 to-slate-900" },
-  { id: "aurora" as const, name: "Cực quang", color: "bg-gradient-to-br from-teal-400 to-cyan-500" },
-  { id: "emerald" as const, name: "Ngọc lục", color: "bg-gradient-to-br from-emerald-400 to-green-500" },
-  { id: "rose" as const, name: "Hoa hồng", color: "bg-gradient-to-br from-rose-400 to-pink-500" },
+  { id: "default" as const, name: "Mặc định", colors: ["#60a5fa", "#f472b6", "#facc15"] },
+  { id: "neon-cyberpunk" as const, name: "Neon Cyberpunk", colors: ["#00F5FF", "#FF00FF", "#00FF41"] },
+  { id: "pastel-dream" as const, name: "Pastel Dream", colors: ["#FFB3D9", "#B3D9FF", "#D9B3FF"] },
+  { id: "minimalist-zen" as const, name: "Minimalist Zen", colors: ["#2C3E50", "#E8E8E8", "#95A5A6"] },
+  { id: "ocean-depths" as const, name: "Ocean Depths", colors: ["#006994", "#00CED1", "#20B2AA"] },
+  { id: "sunset-paradise" as const, name: "Sunset Paradise", colors: ["#FF6B6B", "#FFA07A", "#FFD93D"] },
+  { id: "forest-canopy" as const, name: "Forest Canopy", colors: ["#2D5016", "#6B8E23", "#90EE90"] },
+  { id: "lavender-fields" as const, name: "Lavender Fields", colors: ["#9B59B6", "#E8D5FF", "#DDA0DD"] },
+  { id: "midnight-galaxy" as const, name: "Midnight Galaxy", colors: ["#6C5CE7", "#A29BFE", "#FD79A8"] },
+  { id: "cherry-blossom" as const, name: "Cherry Blossom", colors: ["#FFB7C5", "#FFE4E1", "#FF69B4"] },
+  { id: "desert-mirage" as const, name: "Desert Mirage", colors: ["#D2691E", "#F4A460", "#FF8C00"] },
+  { id: "arctic-frost" as const, name: "Arctic Frost", colors: ["#87CEEB", "#B0E0E6", "#E0F6FF"] },
+  { id: "tropical-paradise" as const, name: "Tropical Paradise", colors: ["#00CED1", "#FFD700", "#FF6347"] },
+  { id: "vintage-paper" as const, name: "Vintage Paper", colors: ["#8B4513", "#DEB887", "#CD853F"] },
+  { id: "electric-storm" as const, name: "Electric Storm", colors: ["#9400D3", "#00BFFF", "#FF1493"] },
+  { id: "mint-fresh" as const, name: "Mint Fresh", colors: ["#00FA9A", "#98FB98", "#00CED1"] },
+  { id: "golden-hour" as const, name: "Golden Hour", colors: ["#FFD700", "#FFA500", "#FF8C00"] },
+  { id: "crystal-palace" as const, name: "Crystal Palace", colors: ["#E6E6FA", "#F0F8FF", "#B0C4DE"] },
+  { id: "coffee-shop" as const, name: "Coffee Shop", colors: ["#6F4E37", "#D2691E", "#8B4513"] },
+  { id: "neon-noir" as const, name: "Neon Noir", colors: ["#FF00FF", "#00FFFF", "#FFFF00"] },
+  { id: "meadow-spring" as const, name: "Meadow Spring", colors: ["#90EE90", "#98FB98", "#FFB6C1"] },
+  { id: "steampunk-brass" as const, name: "Steampunk Brass", colors: ["#CD7F32", "#B87333", "#8B4513"] },
+  { id: "aurora-borealis" as const, name: "Aurora Borealis", colors: ["#00CED1", "#9370DB", "#20B2AA"] },
+  { id: "candy-shop" as const, name: "Candy Shop", colors: ["#FF69B4", "#FFD700", "#00CED1"] },
+  { id: "monochrome-elegance" as const, name: "Monochrome Elegance", colors: ["#000000", "#808080", "#C0C0C0"] },
+  { id: "rainbow-spectrum" as const, name: "Rainbow Spectrum", colors: ["#FF0000", "#FF7F00", "#FFFF00"] },
 ]
 
 export function ThemeSelector() {
@@ -35,19 +51,26 @@ export function ThemeSelector() {
           <span className="sr-only">Chọn theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <div className="px-2 py-1.5 text-sm font-semibold">Chọn theme</div>
+      <DropdownMenuContent align="end" className="w-64 max-h-[600px] overflow-y-auto">
+        <div className="px-2 py-1.5 text-sm font-semibold sticky top-0 bg-background z-10 border-b">
+          Chọn theme ({themes.length})
+        </div>
         {themes.map((themeOption) => (
           <DropdownMenuItem
             key={themeOption.id}
             onClick={() => setTheme(themeOption.id)}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <div className={cn(
-              "w-4 h-4 rounded-full border-2 border-border",
-              themeOption.color
-            )} />
-            <span className="flex-1">{themeOption.name}</span>
+            <div className="flex -space-x-1 overflow-hidden">
+              {themeOption.colors.map((color, i) => (
+                <div
+                  key={i}
+                  className="w-4 h-4 rounded-full border border-border"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </div>
+            <span className="flex-1 text-sm">{themeOption.name}</span>
             {theme === themeOption.id && (
               <Check className="w-4 h-4 text-primary" />
             )}

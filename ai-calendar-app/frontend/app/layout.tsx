@@ -88,9 +88,9 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <ErrorSuppressor />
-          {children}
-          <ToasterProvider />
+        <ErrorSuppressor />
+        {children}
+        <ToasterProvider />
         </ThemeProvider>
       </body>
     </html>

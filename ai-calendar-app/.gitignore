@@ -62,3 +62,6 @@ next-env.d.ts
 
 frontend/.next/
 .next/
+
+node_modules/
+frontend/node_modules/

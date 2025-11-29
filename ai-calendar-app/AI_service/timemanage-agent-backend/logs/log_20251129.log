@@ -1,0 +1,1074 @@
+2025-11-29 21:44:55.116 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 21:44:55.175 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:01:30.333 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:01:32.002 | INFO     | genai.time_management_agent.nodes.router:router_node:122 - Topic: None
+2025-11-29 22:01:32.010 | INFO     | genai.time_management_agent.nodes.router:router_node:128 - New Topic: name='greeting' confidence=0.8 context='hello'
+2025-11-29 22:01:32.016 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:01:32.020 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:01:32.889 | INFO     | __main__:chat:112 - ✅ Response generated: Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên ...
+2025-11-29 22:03:16.625 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:03:16.678 | ERROR    | __main__:chat:120 - ❌ Error processing chat request: 'current_time'
+2025-11-29 22:11:30.352 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 22:11:30.385 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:12:26.882 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:12:28.223 | ERROR    | __main__:chat:126 - ❌ Error processing chat request: litellm.BadRequestError: GroqException - {"error":{"message":"Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.","type":"invalid_request_error","code":"tool_use_failed","failed_generation":"\u003cfunction=json_tool_call\u003e {\"name\": \"greeting\", \"confidence\": 0.9, \"context\": \"hello\"}"}}
+
+2025-11-29 22:13:10.861 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:13:11.467 | ERROR    | __main__:chat:126 - ❌ Error processing chat request: litellm.BadRequestError: GroqException - {"error":{"message":"Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.","type":"invalid_request_error","code":"tool_use_failed","failed_generation":"\u003cfunction=json_tool_call\u003e {\"name\": \"off_topic\", \"confidence\": 0.0, \"context\": \"hello\"}"}}
+
+2025-11-29 22:14:37.422 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 22:14:37.455 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:15:25.971 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:15:26.950 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:15:26.963 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='greeting' confidence=0.8 context='hello'
+2025-11-29 22:15:26.963 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:15:26.979 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:15:27.484 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, chào anh/chị! Em là AI Calendar, trợ lý quản l...
+2025-11-29 22:16:35.214 | INFO     | __main__:chat:65 - 📨 Received message: Hôm nay tôi có gì cần làm?...
+2025-11-29 22:16:35.678 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:16:35.683 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.9 context='Hôm nay tôi có gì cần làm?'
+2025-11-29 22:16:35.683 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:16:35.691 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:16:36.003 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:16:37.433 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:88 - ❌ Supabase fetch error: {'code': '42703', 'details': None, 'hint': None, 'message': 'column tasks.due_date does not exist'}
+2025-11-29 22:16:37.454 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:17:33.099 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:17:33.737 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:17:33.749 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.8 context='UserMessage: Hôm nay tôi có gì cần làm?'
+2025-11-29 22:17:33.750 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:17:33.766 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:17:34.176 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:68 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-29 22:17:34.186 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:17:34.432 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:88 - ❌ Supabase fetch error: {'code': '42703', 'details': None, 'hint': None, 'message': 'column tasks.due_date does not exist'}
+2025-11-29 22:17:34.446 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:17:47.598 | INFO     | __main__:chat:65 - 📨 Received message: hôm nay tôi có công việc gì không...
+2025-11-29 22:17:48.488 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:17:48.494 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có công việc gì không'
+2025-11-29 22:17:48.496 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:17:48.516 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:17:48.795 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:17:49.113 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:88 - ❌ Supabase fetch error: {'code': '42703', 'details': None, 'hint': None, 'message': 'column tasks.due_date does not exist'}
+2025-11-29 22:17:49.127 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:21:29.331 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 22:21:29.369 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:22:15.726 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:22:16.464 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:22:16.464 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='greeting' confidence=0.9 context='hello'
+2025-11-29 22:22:16.471 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:22:16.473 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:22:17.117 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý ảo về ...
+2025-11-29 22:22:23.463 | INFO     | __main__:chat:65 - 📨 Received message: Hôm nay tôi có gì cần làm?...
+2025-11-29 22:22:24.131 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:22:24.131 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.9 context='Hôm nay tôi có gì cần làm?'
+2025-11-29 22:22:24.131 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:22:24.147 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:22:24.370 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:22:25.488 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:94 - ✅ Found 0 tasks for scope: today
+2025-11-29 22:22:25.495 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:22:34.497 | INFO     | __main__:chat:65 - 📨 Received message: Hôm nay tôi có công việc gì không...
+2025-11-29 22:22:35.508 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:22:35.524 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.8 context='Hôm nay tôi có công việc gì không'
+2025-11-29 22:22:35.524 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:22:35.556 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:22:35.819 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:22:36.064 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:94 - ✅ Found 0 tasks for scope: today
+2025-11-29 22:22:36.078 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:27:13.635 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 22:27:13.667 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:27:18.690 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:27:20.926 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:27:20.926 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='greeting' confidence=0.9 context='UserMessage: hello | Time: 2025-11-29 22:27:18'
+2025-11-29 22:27:20.926 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:27:20.936 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:27:21.626 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, chào Anh/Chị! Tôi là AI Calendar, trợ lý ảo ch...
+2025-11-29 22:27:30.331 | INFO     | __main__:chat:65 - 📨 Received message: hôm nay tôi có công việc gì không...
+2025-11-29 22:27:30.939 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:27:30.945 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có công việc gì không'
+2025-11-29 22:27:30.947 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:27:30.960 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:27:31.246 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:27:31.253 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 22:27:32.357 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:100 - ✅ Found 0 tasks for scope: today
+2025-11-29 22:27:32.542 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:108 - 🔍 Debug: Found 0 total tasks in database
+2025-11-29 22:27:32.556 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:27:47.328 | INFO     | __main__:chat:65 - 📨 Received message: tôi muốn note việc cho ngày mai...
+2025-11-29 22:27:48.147 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:27:48.155 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='get_tasks' confidence=0.8 context='tôi muốn note việc cho ngày mai'
+2025-11-29 22:27:48.157 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:27:48.176 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:27:48.500 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: tomorrow
+2025-11-29 22:27:48.501 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: tomorrow)
+2025-11-29 22:27:48.508 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:85 - 🔍 Querying tasks for tomorrow: 2025-11-30
+2025-11-29 22:27:48.765 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:100 - ✅ Found 0 tasks for scope: tomorrow
+2025-11-29 22:27:48.901 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:108 - 🔍 Debug: Found 0 total tasks in database
+2025-11-29 22:27:48.917 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, hiện tại em chưa thấy có công việc nào trong d...
+2025-11-29 22:27:55.285 | INFO     | __main__:chat:65 - 📨 Received message: thêm giúp tôi...
+2025-11-29 22:27:55.826 | INFO     | genai.time_management_agent.nodes.router:router_node:143 - Topic: None
+2025-11-29 22:27:55.835 | INFO     | genai.time_management_agent.nodes.router:router_node:149 - New Topic: name='add_task' confidence=0.9 context='thêm giúp tôi'
+2025-11-29 22:27:55.835 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: add_task
+2025-11-29 22:27:55.857 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:84 - add_task_node called.
+2025-11-29 22:27:56.168 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:129 - LLM raw response: []
+2025-11-29 22:27:56.191 | INFO     | __main__:chat:118 - ✅ Response generated: Dạ, AI Calendar đã ghi lại công việc của Anh/Chị n...
+2025-11-29 22:33:14.089 | INFO     | __main__:<module>:40 - Initializing LangGraph agent...
+2025-11-29 22:33:14.130 | INFO     | __main__:<module>:42 - ✅ Agent initialized successfully
+2025-11-29 22:33:36.488 | INFO     | __main__:chat:65 - 📨 Received message: hello...
+2025-11-29 22:33:37.647 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: greeting (confidence: 1.0)
+2025-11-29 22:33:37.647 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:33:37.647 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='greeting' confidence=1.0 context='hello'
+2025-11-29 22:33:37.653 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:33:37.668 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:33:39.088 | INFO     | __main__:chat:129 - ✅ Response generated: Dạ, chào anh! Em là AI Calendar, trợ lý ảo chuyên ...
+2025-11-29 22:33:51.987 | INFO     | __main__:chat:65 - 📨 Received message: Hôm nay tôi có gì cần làm?...
+2025-11-29 22:33:52.515 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.9)
+2025-11-29 22:33:52.526 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:33:52.529 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.9 context='Hôm nay tôi có gì cần làm?'
+2025-11-29 22:33:52.529 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:33:52.550 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:33:52.994 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:33:53.001 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 22:33:53.723 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:100 - ✅ Found 0 tasks for scope: today
+2025-11-29 22:33:53.842 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:108 - 🔍 Debug: Found 0 total tasks in database
+2025-11-29 22:33:54.285 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:154 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 22:33:54.313 | INFO     | __main__:chat:129 - ✅ Response generated: Chào Anh/Chị, em đây là trợ lý AI quản lý thời gia...
+2025-11-29 22:34:07.449 | INFO     | __main__:chat:65 - 📨 Received message: tôi tên gì...
+2025-11-29 22:34:08.355 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: off_topic (confidence: 1.0)
+2025-11-29 22:34:08.367 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:34:08.375 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=1.0 context='tôi tên gì'
+2025-11-29 22:34:08.391 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 22:34:08.454 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 22:34:08.993 | INFO     | __main__:chat:129 - ✅ Response generated: Dạ, Anh/Chị không cần hỏi tên em, vì em là AI Cale...
+2025-11-29 22:34:30.078 | INFO     | __main__:chat:65 - 📨 Received message: tôi có thể thêm việc cho ngày mai không...
+2025-11-29 22:34:31.189 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: add_task (confidence: 0.8)
+2025-11-29 22:34:31.196 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:34:31.196 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='add_task' confidence=0.8 context='tôi có thể thêm việc cho ngày mai không'
+2025-11-29 22:34:31.203 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: add_task
+2025-11-29 22:34:31.218 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:84 - add_task_node called.
+2025-11-29 22:34:31.706 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:129 - LLM raw response: [
+    {
+        "title": "Thêm việc",
+        "start_at": "unknown",
+        "due_at": "unknown",
+        "description": "ngày mai"
+    }
+]
+2025-11-29 22:34:32.248 | ERROR    | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:201 - ⚠️ Supabase insert error: {'code': '42501', 'details': None, 'hint': None, 'message': 'new row violates row-level security policy for table "tasks"'}
+2025-11-29 22:34:32.250 | ERROR    | __main__:chat:107 - ❌ Graph invoke error: 'start_at'
+2025-11-29 22:34:32.257 | ERROR    | __main__:chat:108 - ❌ Error type: KeyError
+2025-11-29 22:34:32.285 | ERROR    | __main__:chat:110 - ❌ Traceback: Traceback (most recent call last):
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\api_server.py", line 102, in chat
+    response = graph.invoke(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\subgraph\add_task_nodes.py", line 209, in add_task_node
+    task_list = "\n".join([
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\subgraph\add_task_nodes.py", line 210, in <listcomp>
+    f"- {t['title']} (bắt đầu: {format_time(t['start_at'])}, hạn: {format_time(t['due_at'])})"
+KeyError: 'start_at'
+
+2025-11-29 22:38:21.790 | INFO     | __main__:<module>:41 - Initializing LangGraph agent...
+2025-11-29 22:38:21.834 | INFO     | __main__:<module>:43 - ✅ Agent initialized successfully
+2025-11-29 22:38:46.772 | INFO     | __main__:chat:66 - 📨 Received message: hello...
+2025-11-29 22:38:48.085 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting property name enclosed in double quotes: line 2 column 13 (char 14)
+2025-11-29 22:38:48.085 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dưới đây là mã Python để giải quyết bài toán này:
+
+```python
+import json
+
+class Assistant:
+    def __init__(self):
+        self.intent_topics = {
+            'greeting': ['chào', 'hello', 'buổi sáng', 'buổi tối'],
+            'add_task': ['thêm', 'ghi chú', 'tạo', 'lưu', 'muốn', 'cần', 'note'],
+    
+2025-11-29 22:38:48.091 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:38:48.091 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='add_task' confidence=0.7 context='hello'
+2025-11-29 22:38:48.097 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: add_task
+2025-11-29 22:38:48.112 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:84 - add_task_node called.
+2025-11-29 22:38:48.598 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:129 - LLM raw response: []
+2025-11-29 22:38:48.612 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, AI Calendar đã ghi lại công việc của Anh/Chị n...
+2025-11-29 22:38:54.779 | INFO     | __main__:chat:66 - 📨 Received message: Hôm nay tôi có gì cần làm?...
+2025-11-29 22:38:56.001 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 10 (char 9)
+2025-11-29 22:38:56.008 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Để giải quyết bài toán này, chúng ta sẽ sử dụng thuật toán NLP (Học máy ngôn ngữ tự nhiên) để phân tích văn bản và xác định ý định của người dùng.
+
+Dưới đây là mã Python để giải quyết bài toán này:
+```python
+import json
+import re
+
+# Định nghĩa các từ khóa cho từng chủ đề
+greeting_keywords = ["chào",
+2025-11-29 22:38:56.008 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:38:56.013 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='Hôm nay tôi có gì cần làm?'
+2025-11-29 22:38:56.015 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 22:38:56.029 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 22:38:56.633 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, hôm nay Anh/Chị có công việc sau: 
+
+- Công việ...
+2025-11-29 22:41:14.655 | INFO     | __main__:<module>:41 - Initializing LangGraph agent...
+2025-11-29 22:41:14.689 | INFO     | __main__:<module>:43 - ✅ Agent initialized successfully
+2025-11-29 22:41:31.395 | INFO     | __main__:chat:66 - 📨 Received message: hello...
+2025-11-29 22:41:32.109 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: greeting (confidence: 1.0)
+2025-11-29 22:41:32.115 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:41:32.115 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='greeting' confidence=1.0 context='hello'
+2025-11-29 22:41:32.123 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 22:41:32.150 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 22:41:32.783 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên ...
+2025-11-29 22:41:44.812 | INFO     | __main__:chat:66 - 📨 Received message: Hôm nay tôi có gì cần làm?...
+2025-11-29 22:41:45.672 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 22:41:45.679 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:41:45.679 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='Hôm nay tôi có gì cần làm?'
+2025-11-29 22:41:45.687 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:41:45.705 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:41:46.081 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:41:46.086 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 22:41:46.150 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 22:41:46.975 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 22:41:46.979 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 22:41:47.207 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 22:41:47.208 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 22:41:47.756 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 22:41:47.775 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 22:55:39.114 | INFO     | __main__:chat:66 - 📨 Received message: hello...
+2025-11-29 22:55:40.640 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 10 (char 9)
+2025-11-29 22:55:40.647 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dưới đây là mã Python để giải quyết vấn đề này:
+```python
+import json
+
+def classify_intent(user_input):
+    # Duyệt các ví dụ cho từng chủ đề
+    for topic in ["greeting", "add_task", "get_tasks", "off_topic"]:
+        if topic == "greeting":
+            # Ví dụ cho chủ đề chào hỏi
+            if us
+2025-11-29 22:55:40.671 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:55:40.671 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 22:55:40.674 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 22:55:40.690 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 22:55:41.090 | INFO     | __main__:chat:135 - ✅ Response generated: assistant:
+
+Dạ, chào Anh/Chị! Tôi là AI Calendar, ...
+2025-11-29 22:55:50.909 | INFO     | __main__:chat:66 - 📨 Received message: hôm nay tôi có công việc gì không...
+2025-11-29 22:55:51.548 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 22:55:51.548 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:55:51.548 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có công việc gì không'
+2025-11-29 22:55:51.548 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:55:51.562 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:55:51.770 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:55:51.777 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 22:55:51.784 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 22:55:52.146 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 22:55:52.146 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 22:55:52.242 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 22:55:52.242 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 22:55:52.526 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 22:55:52.534 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 22:57:40.338 | INFO     | __main__:chat:66 - 📨 Received message: hello...
+2025-11-29 22:57:42.531 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting property name enclosed in double quotes: line 2 column 13 (char 14)
+2025-11-29 22:57:42.540 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dưới đây là mã Python để giải quyết vấn đề này:
+
+```python
+import json
+import re
+
+# Tạo một đối tượng để lưu trữ dữ liệu
+class Assistant:
+    def __init__(self):
+        self.tasks = []
+
+    # Phương thức để xác định ý định của người dùng
+    def determine_intent(self, user_input):
+        # Xác địn
+2025-11-29 22:57:42.548 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:57:42.550 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 22:57:42.559 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 22:57:44.324 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 22:57:44.649 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, chào bạn. Tôi là AI Calendar, trợ lý AI của bạ...
+2025-11-29 22:57:55.492 | INFO     | __main__:chat:66 - 📨 Received message: hôm nay tôi có công việc gì không...
+2025-11-29 22:57:56.185 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-29 22:57:56.185 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 22:57:56.185 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='hôm nay tôi có công việc gì không'
+2025-11-29 22:57:56.191 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 22:57:56.200 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 22:57:56.399 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 22:57:56.405 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 22:57:56.405 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 22:57:56.796 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 22:57:56.801 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 22:57:56.925 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 22:57:56.937 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 22:57:57.206 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 22:57:57.220 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:00:56.878 | INFO     | __main__:chat:66 - 📨 Received message: hôm nay tôi có công việc gì không...
+2025-11-29 23:00:58.564 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-29 23:00:58.576 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:00:58.590 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='hôm nay tôi có công việc gì không'
+2025-11-29 23:00:58.633 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:00:58.721 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:00:58.965 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:00:58.974 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:00:58.986 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 23:01:00.479 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 23:01:00.481 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 23:01:00.629 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 23:01:00.634 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 23:01:00.860 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:01:00.874 | INFO     | __main__:chat:135 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:02:52.769 | INFO     | __main__:<module>:42 - Initializing LangGraph agent...
+2025-11-29 23:02:52.808 | INFO     | __main__:<module>:44 - ✅ Agent initialized successfully
+2025-11-29 23:02:59.074 | INFO     | __main__:chat:67 - 📨 Received message: hello...
+2025-11-29 23:02:59.074 | INFO     | __main__:chat:68 - 👤 User ID: None (not provided)
+2025-11-29 23:03:00.274 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 52 (char 51)
+2025-11-29 23:03:00.274 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dựa trên yêu cầu và ví dụ trong phần Context, tôi sẽ viết một đoạn code Python để giải quyết vấn đề này.
+
+```python
+import json
+
+def classify_intent(user_input):
+    # Tìm kiếm các từ khóa trong User's input
+    keywords = ["chào", "hello", "thêm", "ghi", "note", "muốn", "cần", "lưu", "tạo", "xem", 
+2025-11-29 23:03:00.274 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:03:00.274 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 23:03:00.274 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:03:00.281 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:03:00.581 | INFO     | __main__:chat:137 - ✅ Response generated: Dạ, chào bạn! Em sẵn sàng giúp bạn quản lý thời gi...
+2025-11-29 23:03:14.475 | INFO     | __main__:chat:67 - 📨 Received message: hôm nay tôi có việc gì không...
+2025-11-29 23:03:14.475 | INFO     | __main__:chat:68 - 👤 User ID: None (not provided)
+2025-11-29 23:03:15.045 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 23:03:15.045 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:03:15.045 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có việc gì không'
+2025-11-29 23:03:15.052 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:03:15.058 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:03:15.252 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:03:15.253 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:03:15.292 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 23:03:15.913 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 23:03:15.913 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 23:03:16.030 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 23:03:16.031 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 23:03:16.260 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:03:16.267 | INFO     | __main__:chat:137 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:05:51.044 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:05:51.117 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:06:21.805 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'NoneType'>, value: None
+2025-11-29 23:06:21.808 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764432381611', 'history': [], 'user_id': None}
+2025-11-29 23:06:21.808 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:06:21.808 | INFO     | __main__:chat:73 - 👤 User ID: None (not provided)
+2025-11-29 23:06:21.810 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764432381611
+2025-11-29 23:06:23.277 | ERROR    | genai.time_management_agent.nodes.router:router_node:163 - ❌ JSON parsing error: 1 validation error for TopicSchema
+confidence
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='Score between 0 and 1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing, raw content: Để xác định ý định của người dùng và trả lời theo yêu cầu, tôi sẽ thực hiện các bước sau:
+
+1. **Đọc kỹ Chat History và User's input**: Tôi sẽ đọc kỹ thông tin trong Chat History và User's input để hiể
+2025-11-29 23:06:23.277 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:06:23.277 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 23:06:23.284 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:06:23.291 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:06:23.827 | INFO     | __main__:chat:143 - ✅ Response generated: Tôi chào mừng Anh/Chị! Em là AI Calendar, trợ lý A...
+2025-11-29 23:06:58.601 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'NoneType'>, value: None
+2025-11-29 23:06:58.604 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có công việc gì không', 'thread_id': 'thread_1764432381611', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Tôi chào mừng Anh/Chị! Em là AI Calendar, trợ lý AI giúp Anh/Chị quản lý thời gian và sắp xếp công việc một cách hiệu quả. Em sẵn sàng hỗ trợ Anh/Chị thêm, xem, sửa, hoặc xóa công việc (task, event, reminder) và gợi ý cách sắp xếp thời gian hợp lý dựa trên deadline, độ ưu tiên, và khung thời gian rảnh. Em còn giúp Anh/Chị theo dõi hiệu suất làm việc, phát hiện điểm chậm trễ, và đưa ra lời khuyên tối ưu hóa. Em đồng bộ dữ liệu với cơ sở dữ liệu để giúp Anh/Chị luôn nắm bắt được các công việc cần làm, không bỏ sót deadline và giữ lịch trình cân bằng.\n\nMong rằng Anh/Chị sẽ tận dụng được sự hỗ trợ của em! Hãy cho em biết em có thể giúp Anh/Chị làm gì.'}], 'user_id': None}
+2025-11-29 23:06:58.604 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có công việc gì không...
+2025-11-29 23:06:58.604 | INFO     | __main__:chat:73 - 👤 User ID: None (not provided)
+2025-11-29 23:06:58.604 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764432381611
+2025-11-29 23:06:59.263 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.9)
+2025-11-29 23:06:59.270 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:06:59.270 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.9 context='hôm nay tôi có công việc gì không'
+2025-11-29 23:06:59.270 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:06:59.277 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:06:59.494 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:06:59.496 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:06:59.517 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - ⚠️ No user_id provided - querying all tasks (may return wrong user's tasks)
+2025-11-29 23:07:00.041 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: None)
+2025-11-29 23:07:00.041 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 23:07:00.135 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: None)
+2025-11-29 23:07:00.135 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: None
+2025-11-29 23:07:00.361 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:07:00.361 | INFO     | __main__:chat:143 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:10:38.206 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:10:38.245 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:11:03.840 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:11:03.855 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764432661360', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:11:03.855 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:11:03.855 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:11:03.861 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764432661360
+2025-11-29 23:11:05.402 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: greeting (confidence: 1.0)
+2025-11-29 23:11:05.402 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:11:05.402 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='greeting' confidence=1.0 context='User said hello'
+2025-11-29 23:11:05.408 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 23:11:05.409 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 23:11:06.159 | INFO     | __main__:chat:143 - ✅ Response generated: Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên ...
+2025-11-29 23:11:12.662 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:11:12.666 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'tôi tên gì', 'thread_id': 'thread_1764432661360', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên về quản lý thời gian và sắp xếp công việc. Em có thể hỗ trợ:\n* Thêm, xem, sửa, hoặc xóa công việc\n* Gợi ý cách sắp xếp thời gian hợp lý\n* Theo dõi hiệu suất làm việc và đưa ra lời khuyên tối ưu hóa\nMục tiêu chính của Em là giúp Anh luôn nắm bắt được các công việc cần làm và giữ lịch trình cân bằng. Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:11:12.669 | INFO     | __main__:chat:72 - 📨 Message: tôi tên gì...
+2025-11-29 23:11:12.670 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:11:12.670 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764432661360
+2025-11-29 23:11:14.027 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 2 column 17 (char 18)
+2025-11-29 23:11:14.027 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: ```python
+import json
+import re
+
+# Kỹ năng phân tích ngữ cảnh hội thoại
+def phân_tích_ngữ_cảnh(hội_thoại):
+    # Tách ra các từ khóa quan trọng
+    từ_khóa = re.findall(r'\w+', hội_thoại)
+    # Xác định ý định của người dùng
+    if từ_khóa[0].lower() in ['chào', 'hello', 'buổi', 'sáng']:
+        ret
+2025-11-29 23:11:14.027 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:11:14.027 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='tôi tên gì'
+2025-11-29 23:11:14.034 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:11:14.042 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:11:14.423 | INFO     | __main__:chat:143 - ✅ Response generated: Dạ, Anh không hỏi về công việc hoặc quản lý thời g...
+2025-11-29 23:11:30.742 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:11:30.745 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'vậy hôm nay mình có công việc gì vậy', 'thread_id': 'thread_1764432661360', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên về quản lý thời gian và sắp xếp công việc. Em có thể hỗ trợ:\n* Thêm, xem, sửa, hoặc xóa công việc\n* Gợi ý cách sắp xếp thời gian hợp lý\n* Theo dõi hiệu suất làm việc và đưa ra lời khuyên tối ưu hóa\nMục tiêu chính của Em là giúp Anh luôn nắm bắt được các công việc cần làm và giữ lịch trình cân bằng. Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'tôi tên gì'}, {'role': 'assistant', 'content': 'Dạ, Anh không hỏi về công việc hoặc quản lý thời gian. Em không rõ Anh muốn hỏi gì khác ngoài phạm vi nhiệm vụ chính của Em. Nếu Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc, Hãy cho Em biết, Em sẽ hỗ trợ Anh!'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:11:30.746 | INFO     | __main__:chat:72 - 📨 Message: vậy hôm nay mình có công việc gì vậy...
+2025-11-29 23:11:30.746 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:11:30.749 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764432661360
+2025-11-29 23:11:31.656 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-29 23:11:31.659 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:11:31.660 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='vậy hôm nay mình có công việc gì vậy'
+2025-11-29 23:11:31.661 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:11:31.669 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:11:31.868 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:11:31.874 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:11:31.947 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:102 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:11:32.798 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:110 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:11:32.798 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:119 - ⚠️ No tasks found for today. Checking all tasks in database...
+2025-11-29 23:11:32.963 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:124 - 🔍 Debug: Found 0 total tasks in database (user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:11:32.963 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - ⚠️ No tasks in database at all for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:11:33.367 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:194 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:11:33.374 | INFO     | __main__:chat:143 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:17:53.821 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:17:53.860 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:18:21.095 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:18:21.095 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764433098884', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:18:21.095 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:18:21.095 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:21.095 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433098884
+2025-11-29 23:18:21.102 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:21.102 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:18:22.379 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 10 (char 9)
+2025-11-29 23:18:22.386 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: ```python
+import json
+import re
+
+# Định nghĩa các mẫu regex cho từng topic
+greeting_regex = r"chào|hello|buổi sáng|buổi tối"
+add_task_regex = r"(thêm|ghi chú|tạo|lưu|muốn|cần|note|thêm|giúp)(.*)"
+get_tasks_regex = r"(hôm nay|tuần này|còn lại|làm|cho tôi xem|hiển thị)(.*)"
+off_topic_regex = r"(kể chu
+2025-11-29 23:18:22.393 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:18:22.393 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 23:18:22.393 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:18:22.401 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:18:22.692 | INFO     | __main__:chat:148 - ✅ Response generated: assistant: Dạ, anh/chị có gì cần giúp đỡ không?...
+2025-11-29 23:18:53.831 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:18:53.833 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có công việc gì không', 'thread_id': 'thread_1764433098884', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'assistant: Dạ, anh/chị có gì cần giúp đỡ không?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:18:53.833 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có công việc gì không...
+2025-11-29 23:18:53.836 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:53.836 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433098884
+2025-11-29 23:18:53.838 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:53.839 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:18:54.615 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.9)
+2025-11-29 23:18:54.616 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:18:54.616 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.9 context='hôm nay tôi có công việc gì không'
+2025-11-29 23:18:54.616 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:18:54.622 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:18:54.840 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:18:54.842 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:18:54.842 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:18:54.843 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:18:54.876 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:55.498 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:112 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:18:55.498 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:121 - ⚠️ No tasks found for today (date: 2025-11-29). Checking all tasks in database...
+2025-11-29 23:18:55.502 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:125 - 🔍 Querying all tasks for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:55.615 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - 🔍 Debug: Found 0 total tasks in database (user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:18:55.621 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:140 - ⚠️ No tasks in database at all for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:18:55.844 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:205 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:18:55.851 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:26:17.599 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:26:17.619 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có công việc gì không', 'thread_id': 'thread_1764433098884', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'assistant: Dạ, anh/chị có gì cần giúp đỡ không?'}, {'role': 'user', 'content': 'hôm nay tôi có công việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị có muốn thêm công việc mới không ạ?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:26:17.619 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có công việc gì không...
+2025-11-29 23:26:17.629 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:26:17.629 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433098884
+2025-11-29 23:26:17.640 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:26:17.645 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:26:19.334 | ERROR    | genai.time_management_agent.nodes.router:router_node:163 - ❌ JSON parsing error: 1 validation error for TopicSchema
+confidence
+  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='Score between 0 and 1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/float_parsing, raw content: Để xác định ý định của người dùng và trả lời tương ứng, Assistant sẽ thực hiện các bước sau:
+
+1. **Đọc kỹ Chat History và User's input**: Assistant đọc kỹ các thông tin trong Chat History và User's in
+2025-11-29 23:26:19.342 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:26:19.348 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hôm nay tôi có công việc gì không'
+2025-11-29 23:26:19.355 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:26:19.382 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:26:19.905 | INFO     | __main__:chat:148 - ✅ Response generated: assistant: Dạ, hôm nay Anh/Chị chưa có công việc n...
+2025-11-29 23:31:35.311 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:31:35.342 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:32:17.541 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:32:17.569 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764433935428', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:32:17.569 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:32:17.573 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:32:17.575 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:32:17.591 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:32:17.591 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:32:19.118 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 10 (char 9)
+2025-11-29 23:32:19.125 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dưới đây là mã Python để giải quyết vấn đề này:
+
+```python
+import json
+
+class Assistant:
+    def __init__(self):
+        self.intents = {
+            "greeting": ["chào", "hello", "hi", "xin chào", "buổi sáng"],
+            "add_task": ["thêm", "ghi chú", "tạo", "lưu", "muốn", "cần", "note"],
+      
+2025-11-29 23:32:19.125 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:32:19.125 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-29 23:32:19.135 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:32:19.144 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:32:19.528 | INFO     | __main__:chat:148 - ✅ Response generated: Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chu...
+2025-11-29 23:32:31.904 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:32:31.904 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có việc gì không', 'thread_id': 'thread_1764433935428', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chuyên về quản lý thời gian và sắp xếp công việc. Em ở đây để giúp Anh/Chị duy trì kỷ luật thời gian và hoàn thành các công việc một cách hiệu quả. Liệu Anh/Chị có muốn ghi lại công việc mới, cập nhật hoặc hoàn thành công việc hiện có, hay nhận đề xuất lịch làm việc?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:32:31.904 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có việc gì không...
+2025-11-29 23:32:31.911 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:32:31.911 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:32:31.917 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:32:31.919 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:32:32.875 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 23:32:32.875 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:32:32.875 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có việc gì không'
+2025-11-29 23:32:32.881 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:32:32.899 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:32:33.341 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:32:33.347 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:32:33.347 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:32:33.347 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:32:33.417 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:32:33.702 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:112 - ✅ Found 1 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:32:33.702 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:116 - 📋 Tasks found:
+2025-11-29 23:32:33.702 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:118 -    1. ngủ | date: 2025-11-29 | time: 23:00 | completed: False
+2025-11-29 23:32:34.011 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:205 - ✅ LLM generated reply based on 1 tasks
+2025-11-29 23:32:34.022 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 ...
+2025-11-29 23:33:06.274 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:33:06.278 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'trong tuần này tôi có công việc gì không', 'thread_id': 'thread_1764433935428', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chuyên về quản lý thời gian và sắp xếp công việc. Em ở đây để giúp Anh/Chị duy trì kỷ luật thời gian và hoàn thành các công việc một cách hiệu quả. Liệu Anh/Chị có muốn ghi lại công việc mới, cập nhật hoặc hoàn thành công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với ưu tiên trung bình, em nhé.'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:33:06.280 | INFO     | __main__:chat:72 - 📨 Message: trong tuần này tôi có công việc gì không...
+2025-11-29 23:33:06.281 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:06.283 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:33:06.286 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:06.287 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:33:06.819 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-29 23:33:06.826 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:33:06.827 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='trong tuần này tôi có công việc gì không'
+2025-11-29 23:33:06.827 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:33:06.857 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:33:07.190 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:68 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-29 23:33:07.193 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:33:07.193 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:33:07.193 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:33:07.197 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:33:07.197 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:07.837 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:112 - ✅ Found 1 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:33:07.838 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:116 - 📋 Tasks found:
+2025-11-29 23:33:07.839 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:118 -    1. ngủ | date: 2025-11-29 | time: 23:00 | completed: False
+2025-11-29 23:33:08.091 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:205 - ✅ LLM generated reply based on 1 tasks
+2025-11-29 23:33:08.091 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 ...
+2025-11-29 23:33:24.044 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:33:24.045 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'trong tuần này tôi có việc gì không', 'thread_id': 'thread_1764433935428', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chuyên về quản lý thời gian và sắp xếp công việc. Em ở đây để giúp Anh/Chị duy trì kỷ luật thời gian và hoàn thành các công việc một cách hiệu quả. Liệu Anh/Chị có muốn ghi lại công việc mới, cập nhật hoặc hoàn thành công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với ưu tiên trung bình, em nhé.'}, {'role': 'user', 'content': 'trong tuần này tôi có công việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức ưu tiên trung bình.'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:33:24.049 | INFO     | __main__:chat:72 - 📨 Message: trong tuần này tôi có việc gì không...
+2025-11-29 23:33:24.050 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:24.051 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:33:24.055 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:24.056 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:33:24.902 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.9)
+2025-11-29 23:33:24.902 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:33:24.902 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.9 context='trong tuần này tôi có việc gì không'
+2025-11-29 23:33:24.902 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:33:24.916 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:33:25.221 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:68 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-29 23:33:25.221 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: today
+2025-11-29 23:33:25.226 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:33:25.227 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:33:25.228 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:33:25.228 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:25.497 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:112 - ✅ Found 1 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:33:25.499 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:116 - 📋 Tasks found:
+2025-11-29 23:33:25.499 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:118 -    1. ngủ | date: 2025-11-29 | time: 23:00 | completed: False
+2025-11-29 23:33:26.594 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:205 - ✅ LLM generated reply based on 1 tasks
+2025-11-29 23:33:26.609 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 ...
+2025-11-29 23:33:35.368 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:33:35.369 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'ngày mai tôi có việc gì không', 'thread_id': 'thread_1764433935428', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chuyên về quản lý thời gian và sắp xếp công việc. Em ở đây để giúp Anh/Chị duy trì kỷ luật thời gian và hoàn thành các công việc một cách hiệu quả. Liệu Anh/Chị có muốn ghi lại công việc mới, cập nhật hoặc hoàn thành công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với ưu tiên trung bình, em nhé.'}, {'role': 'user', 'content': 'trong tuần này tôi có công việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức ưu tiên trung bình.'}, {'role': 'user', 'content': 'trong tuần này tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức độ ưu tiên trung bình, em.'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:33:35.370 | INFO     | __main__:chat:72 - 📨 Message: ngày mai tôi có việc gì không...
+2025-11-29 23:33:35.373 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:35.374 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:33:35.376 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:35.378 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:33:36.387 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 23:33:36.387 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:33:36.387 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='ngày mai tôi có việc gì không'
+2025-11-29 23:33:36.387 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:33:36.402 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:33:36.608 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:71 - 🔎 Detected time scope: tomorrow
+2025-11-29 23:33:36.608 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:77 - 🔍 Querying tasks for date: 2025-11-29 (scope: tomorrow)
+2025-11-29 23:33:36.608 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:33:36.616 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:33:36.617 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:90 - 🔍 Querying tasks for tomorrow: 2025-11-30
+2025-11-29 23:33:36.617 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:104 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:36.847 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:112 - ✅ Found 0 tasks for scope: tomorrow (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:33:36.849 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:121 - ⚠️ No tasks found for tomorrow (date: 2025-11-29). Checking all tasks in database...
+2025-11-29 23:33:36.849 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:125 - 🔍 Querying all tasks for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:36.963 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - 🔍 Debug: Found 1 total tasks in database (user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:33:36.963 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:131 - 📋 All tasks for user 05b180d3-bc21-48a4-bd26-f09bbdb98da7:
+2025-11-29 23:33:36.963 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:135 -    - Task: ngủ | date: 2025-11-29 (type: <class 'str'>) | user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 | matches today? True
+2025-11-29 23:33:37.207 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:205 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:33:37.219 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:33:49.362 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:33:49.365 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'thêm giúp tôi lịch học vào 8h sáng mai', 'thread_id': 'thread_1764433935428', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Xin chào Anh/Chị! Em là AI Calendar, trợ lý AI chuyên về quản lý thời gian và sắp xếp công việc. Em ở đây để giúp Anh/Chị duy trì kỷ luật thời gian và hoàn thành các công việc một cách hiệu quả. Liệu Anh/Chị có muốn ghi lại công việc mới, cập nhật hoặc hoàn thành công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với ưu tiên trung bình, em nhé.'}, {'role': 'user', 'content': 'trong tuần này tôi có công việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức ưu tiên trung bình.'}, {'role': 'user', 'content': 'trong tuần này tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức độ ưu tiên trung bình, em.'}, {'role': 'user', 'content': 'ngày mai tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị có muốn thêm công việc mới không ạ?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:33:49.369 | INFO     | __main__:chat:72 - 📨 Message: thêm giúp tôi lịch học vào 8h sáng mai...
+2025-11-29 23:33:49.369 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:49.369 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764433935428
+2025-11-29 23:33:49.372 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:33:49.374 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:33:50.568 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: add_task (confidence: 0.9)
+2025-11-29 23:33:50.568 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:33:50.568 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='add_task' confidence=0.9 context='thêm giúp tôi lịch học vào 8h sáng mai'
+2025-11-29 23:33:50.574 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: add_task
+2025-11-29 23:33:50.582 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:84 - add_task_node called.
+2025-11-29 23:33:51.338 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:129 - LLM raw response: [
+    {
+        "title": "Lịch học",
+        "start_at": "2025-11-30T08:00:00+07:00",
+        "due_at": "unknown",
+        "description": "học vào sáng mai"
+    }
+]
+2025-11-29 23:33:51.359 | WARNING  | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:159 - Validation failed for {'title': 'Lịch học', 'start_at': '2025-11-30T08:00:00+07:00', 'due_at': 'unknown', 'description': 'học vào sáng mai'}: 1 validation error for TaskModel
+start_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2025, 1...key='Asia/Ho_Chi_Minh')), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-11-29 23:33:51.652 | ERROR    | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:201 - ⚠️ Supabase insert error: {'code': '23503', 'details': 'Key (user_id)=(00000000-0000-0000-0000-000000000000) is not present in table "users".', 'hint': None, 'message': 'insert or update on table "tasks" violates foreign key constraint "tasks_user_id_fkey"'}
+2025-11-29 23:33:51.659 | ERROR    | __main__:chat:126 - ❌ Graph invoke error: 'start_at'
+2025-11-29 23:33:51.659 | ERROR    | __main__:chat:127 - ❌ Error type: KeyError
+2025-11-29 23:33:51.686 | ERROR    | __main__:chat:129 - ❌ Traceback: Traceback (most recent call last):
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\api_server.py", line 121, in chat
+    response = graph.invoke(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\subgraph\add_task_nodes.py", line 209, in add_task_node
+    task_list = "\n".join([
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\subgraph\add_task_nodes.py", line 210, in <listcomp>
+    f"- {t['title']} (bắt đầu: {format_time(t['start_at'])}, hạn: {format_time(t['due_at'])})"
+KeyError: 'start_at'
+
+2025-11-29 23:37:23.510 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:37:23.537 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:37:35.057 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:37:35.061 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764434253932', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:37:35.062 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:37:35.062 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:37:35.063 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764434253932
+2025-11-29 23:37:35.064 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:37:35.064 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:37:35.690 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: greeting (confidence: 0.8)
+2025-11-29 23:37:35.696 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:37:35.696 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='greeting' confidence=0.8 context='hello'
+2025-11-29 23:37:35.700 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: greeting
+2025-11-29 23:37:35.710 | INFO     | genai.time_management_agent.nodes.subgraph.greeting_nodes:greeting_node:24 - greeting_node called.
+2025-11-29 23:37:37.110 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên ...
+2025-11-29 23:37:45.335 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:37:45.344 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có việc gì không', 'thread_id': 'thread_1764434253932', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên về quản lý thời gian và sắp xếp công việc. Em có thể hỗ trợ Anh:\n* Thêm, xem, sửa, hoặc xóa công việc\n* Gợi ý cách sắp xếp thời gian hợp lý\n* Theo dõi hiệu suất làm việc và đưa ra lời khuyên tối ưu hóa\nMục tiêu chính của Em là giúp Anh luôn nắm bắt được các công việc cần làm và giữ lịch trình cân bằng. Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:37:45.345 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có việc gì không...
+2025-11-29 23:37:45.345 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:37:45.345 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764434253932
+2025-11-29 23:37:45.358 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:37:45.361 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:37:46.083 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 23:37:46.083 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:37:46.083 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có việc gì không'
+2025-11-29 23:37:46.083 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:37:46.098 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:37:46.319 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:79 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-29 23:37:46.319 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔎 Detected time scope: today
+2025-11-29 23:37:46.326 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:88 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:37:46.327 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:92 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:37:46.327 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:93 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:37:46.361 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:115 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:37:46.916 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:123 - ✅ Found 1 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:37:46.916 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:127 - 📋 Tasks found:
+2025-11-29 23:37:46.918 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 -    1. ngủ | date: 2025-11-29 | time: 23:00 | completed: False
+2025-11-29 23:37:47.190 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:216 - ✅ LLM generated reply based on 1 tasks
+2025-11-29 23:37:47.195 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 ...
+2025-11-29 23:38:00.446 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:38:00.446 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'ngày mai thì sao', 'thread_id': 'thread_1764434253932', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên về quản lý thời gian và sắp xếp công việc. Em có thể hỗ trợ Anh:\n* Thêm, xem, sửa, hoặc xóa công việc\n* Gợi ý cách sắp xếp thời gian hợp lý\n* Theo dõi hiệu suất làm việc và đưa ra lời khuyên tối ưu hóa\nMục tiêu chính của Em là giúp Anh luôn nắm bắt được các công việc cần làm và giữ lịch trình cân bằng. Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức ưu tiên trung bình, em nhé.'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:38:00.446 | INFO     | __main__:chat:72 - 📨 Message: ngày mai thì sao...
+2025-11-29 23:38:00.446 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:38:00.450 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764434253932
+2025-11-29 23:38:00.452 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:38:00.452 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:38:02.221 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: off_topic (confidence: 0.8)
+2025-11-29 23:38:02.228 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:38:02.228 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.8 context='ngày mai thì sao'
+2025-11-29 23:38:02.235 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-29 23:38:02.243 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-29 23:38:02.694 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, ngày mai Anh/Chị có 2 công việc: cuộc họp lúc ...
+2025-11-29 23:40:13.733 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:40:13.764 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'Ngày mai tôi có công việc gì không', 'thread_id': 'thread_1764434253932', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh! Em là AI Calendar, trợ lý ảo chuyên về quản lý thời gian và sắp xếp công việc. Em có thể hỗ trợ Anh:\n* Thêm, xem, sửa, hoặc xóa công việc\n* Gợi ý cách sắp xếp thời gian hợp lý\n* Theo dõi hiệu suất làm việc và đưa ra lời khuyên tối ưu hóa\nMục tiêu chính của Em là giúp Anh luôn nắm bắt được các công việc cần làm và giữ lịch trình cân bằng. Anh muốn ghi lại công việc mới, cập nhật công việc hiện có, hay nhận đề xuất lịch làm việc?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: ngủ lúc 23:00 với mức ưu tiên trung bình, em nhé.'}, {'role': 'user', 'content': 'ngày mai thì sao'}, {'role': 'assistant', 'content': 'Dạ, ngày mai Anh/Chị có 2 công việc: cuộc họp lúc 09:00 và dự án deadline lúc 17:00 với mức ưu tiên cao, em nhé. Em đề xuất Anh/Chị nênWake up lúc 07:00 để có thời gian chuẩn bị. | Time: 2025-11-30 00:00:00'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:40:13.766 | INFO     | __main__:chat:72 - 📨 Message: Ngày mai tôi có công việc gì không...
+2025-11-29 23:40:13.768 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:40:13.769 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764434253932
+2025-11-29 23:40:13.780 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:40:13.783 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:40:14.787 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-29 23:40:14.800 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-29 23:40:14.800 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='Ngày mai tôi có công việc gì không'
+2025-11-29 23:40:14.804 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-29 23:40:14.816 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-29 23:40:15.203 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:79 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-29 23:40:15.204 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:82 - 🔎 Detected time scope: today
+2025-11-29 23:40:15.204 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:88 - 🔍 Querying tasks for date: 2025-11-29 (scope: today)
+2025-11-29 23:40:15.204 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:92 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-29 23:40:15.210 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:93 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-29 23:40:15.211 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:115 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:40:15.496 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:123 - ✅ Found 0 tasks for scope: today (date: 2025-11-29, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:40:15.496 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:132 - ⚠️ No tasks found for today (date: 2025-11-29). Checking all tasks in database...
+2025-11-29 23:40:15.498 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:136 - 🔍 Querying all tasks for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:40:15.587 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:140 - 🔍 Debug: Found 0 total tasks in database (user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-29 23:40:15.594 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:151 - ⚠️ No tasks in database at all for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:40:16.724 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:216 - ✅ LLM generated reply based on 0 tasks
+2025-11-29 23:40:16.734 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-29 23:51:28.336 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:51:28.372 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:52:23.772 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:52:23.786 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764435136233', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:52:23.786 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:52:23.793 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:52:23.793 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435136233
+2025-11-29 23:52:23.800 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:52:23.800 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:52:24.795 | ERROR    | __main__:chat:126 - ❌ Graph invoke error: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2025-11-29 23:52:24.795 | ERROR    | __main__:chat:127 - ❌ Error type: NotFoundError
+2025-11-29 23:52:24.806 | ERROR    | __main__:chat:129 - ❌ Traceback: Traceback (most recent call last):
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\vertex_ai\gemini\vertex_and_google_ai_studio_gemini.py", line 2473, in completion
+    response = client.post(url=url, headers=headers, json=data, logging_obj=logging_obj)  # type: ignore
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 944, in post
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 926, in post
+    response.raise_for_status()
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=AIzaSyAxKFHVGE23rbcFZkBAdBG-tYcRxylZf6w'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 2875, in completion
+    response = vertex_chat_completion.completion(  # type: ignore
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\vertex_ai\gemini\vertex_and_google_ai_studio_gemini.py", line 2477, in completion
+    raise VertexAIError(
+litellm.llms.vertex_ai.common_utils.VertexAIError: {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\api_server.py", line 121, in chat
+    response = graph.invoke(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\router.py", line 113, in router_node
+    response = completion(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1381, in wrapper
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1250, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 3774, in completion
+    raise exception_type(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2328, in exception_type
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 1383, in exception_type
+    raise NotFoundError(
+litellm.exceptions.NotFoundError: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+
+2025-11-29 23:56:10.045 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:56:10.125 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-29 23:57:02.399 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-29 23:57:02.405 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764435420183', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-29 23:57:02.405 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-29 23:57:02.405 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:57:02.405 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435420183
+2025-11-29 23:57:02.413 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-29 23:57:02.413 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-29 23:57:03.224 | ERROR    | __main__:chat:126 - ❌ Graph invoke error: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+2025-11-29 23:57:03.224 | ERROR    | __main__:chat:127 - ❌ Error type: NotFoundError
+2025-11-29 23:57:03.256 | ERROR    | __main__:chat:129 - ❌ Traceback: Traceback (most recent call last):
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\vertex_ai\gemini\vertex_and_google_ai_studio_gemini.py", line 2473, in completion
+    response = client.post(url=url, headers=headers, json=data, logging_obj=logging_obj)  # type: ignore
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 944, in post
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 926, in post
+    response.raise_for_status()
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\httpx\_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyA3n0fDt0xCcU6JLowNdvZYcO36802eaGI'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 2875, in completion
+    response = vertex_chat_completion.completion(  # type: ignore
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\llms\vertex_ai\gemini\vertex_and_google_ai_studio_gemini.py", line 2477, in completion
+    raise VertexAIError(
+litellm.llms.vertex_ai.common_utils.VertexAIError: {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\api_server.py", line 121, in chat
+    response = graph.invoke(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "D:\FPT\EXE\AI Calendar\ai-calendar-app\AI_service\timemanage-agent-backend\src\genai\time_management_agent\nodes\router.py", line 113, in router_node
+    response = completion(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1381, in wrapper
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\utils.py", line 1250, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\main.py", line 3774, in completion
+    raise exception_type(
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2328, in exception_type
+    raise e
+  File "C:\Users\hieuh\AppData\Local\Programs\Python\Python310\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 1383, in exception_type
+    raise NotFoundError(
+litellm.exceptions.NotFoundError: litellm.NotFoundError: GeminiException - {
+  "error": {
+    "code": 404,
+    "message": "models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+    "status": "NOT_FOUND"
+  }
+}
+
+
+2025-11-29 23:59:14.706 | INFO     | __main__:<module>:43 - Initializing LangGraph agent...
+2025-11-29 23:59:14.803 | INFO     | __main__:<module>:45 - ✅ Agent initialized successfully
+2025-11-30 00:00:27.888 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-30 00:00:27.900 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hello', 'thread_id': 'thread_1764435621741', 'history': [], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-30 00:00:27.901 | INFO     | __main__:chat:72 - 📨 Message: hello...
+2025-11-30 00:00:27.902 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:27.902 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435621741
+2025-11-30 00:00:27.910 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:27.911 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-30 00:00:29.505 | ERROR    | genai.time_management_agent.nodes.router:router_node:148 - ❌ JSON decode error: Expecting value: line 1 column 10 (char 9)
+2025-11-30 00:00:29.518 | ERROR    | genai.time_management_agent.nodes.router:router_node:149 - ❌ Raw content: Dưới đây là mã Python để giải quyết yêu cầu trên:
+
+```python
+import json
+
+# Tạo một đối tượng để lưu trữ thông tin người dùng
+class User:
+    def __init__(self, chat_history, user_input):
+        self.chat_history = chat_history
+        self.user_input = user_input
+        self.tasks = []
+
+# Tạo một
+2025-11-30 00:00:29.533 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-30 00:00:29.539 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='off_topic' confidence=0.5 context='hello'
+2025-11-30 00:00:29.553 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: off_topic
+2025-11-30 00:00:29.560 | INFO     | genai.time_management_agent.nodes.subgraph.off_topic_nodes:off_topic_node:23 - off_topic_node called.
+2025-11-30 00:00:29.888 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý thời g...
+2025-11-30 00:00:37.851 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-30 00:00:37.851 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'hôm nay tôi có việc gì không', 'thread_id': 'thread_1764435621741', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý thời gian của Anh/Chị. Em ở đây để giúp Anh/Chị quản lý thời gian và sắp xếp công việc một cách hiệu quả. Anh/Chị có gì muốn hỏi hoặc muốn em giúp đỡ không?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-30 00:00:37.851 | INFO     | __main__:chat:72 - 📨 Message: hôm nay tôi có việc gì không...
+2025-11-30 00:00:37.866 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:37.868 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435621741
+2025-11-30 00:00:37.868 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:37.868 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-30 00:00:38.693 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 0.8)
+2025-11-30 00:00:38.693 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-30 00:00:38.697 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=0.8 context='hôm nay tôi có việc gì không'
+2025-11-30 00:00:38.699 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-30 00:00:38.707 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-30 00:00:38.911 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-30 00:00:38.914 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:84 - 🔎 Detected time scope: today
+2025-11-30 00:00:38.916 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:90 - 🔍 Querying tasks for date: 2025-11-30 (scope: today)
+2025-11-30 00:00:38.916 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:94 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-30 00:00:38.921 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:95 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-30 00:00:38.949 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:117 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:40.574 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:125 - ✅ Found 0 tasks for scope: today (date: 2025-11-30, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-30 00:00:40.574 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:134 - ⚠️ No tasks found for today (date: 2025-11-30). Checking all tasks in database...
+2025-11-30 00:00:40.574 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:138 - 🔍 Querying all tasks for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:40.736 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:142 - 🔍 Debug: Found 0 total tasks in database (user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-30 00:00:40.736 | WARNING  | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:153 - ⚠️ No tasks in database at all for user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:41.168 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:240 - ✅ LLM generated reply based on 0 tasks
+2025-11-30 00:00:41.179 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị...
+2025-11-30 00:00:58.136 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-30 00:00:58.143 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'thêm lịch họp vào 8h sáng giúp tôi', 'thread_id': 'thread_1764435621741', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý thời gian của Anh/Chị. Em ở đây để giúp Anh/Chị quản lý thời gian và sắp xếp công việc một cách hiệu quả. Anh/Chị có gì muốn hỏi hoặc muốn em giúp đỡ không?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị có muốn thêm công việc mới không ạ?'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-30 00:00:58.143 | INFO     | __main__:chat:72 - 📨 Message: thêm lịch họp vào 8h sáng giúp tôi...
+2025-11-30 00:00:58.143 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:58.143 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435621741
+2025-11-30 00:00:58.151 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:00:58.152 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-30 00:00:58.913 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: add_task (confidence: 1.0)
+2025-11-30 00:00:58.928 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-30 00:00:58.928 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='add_task' confidence=1.0 context='thêm lịch họp vào 8h sáng giúp tôi'
+2025-11-30 00:00:58.928 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: add_task
+2025-11-30 00:00:58.928 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:84 - add_task_node called.
+2025-11-30 00:00:59.665 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:134 - LLM raw response: [
+    {
+        "title": "Họp",
+        "start_at": "2025-11-30T08:00:00+07:00",
+        "due_at": "unknown",
+        "description": "không có thông tin chi tiết"
+    }
+]
+2025-11-30 00:00:59.680 | WARNING  | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:164 - Validation failed for {'title': 'Họp', 'start_at': '2025-11-30T08:00:00+07:00', 'due_at': 'unknown', 'description': 'không có thông tin chi tiết'}: 1 validation error for TaskModel
+start_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2025, 1...key='Asia/Ho_Chi_Minh')), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-11-30 00:00:59.680 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:204 - 📝 Inserting task: Họp for user 05b180d3-bc21-48a4-bd26-f09bbdb98da7 on 2025-11-30 at None
+2025-11-30 00:01:00.118 | INFO     | genai.time_management_agent.nodes.subgraph.add_task_nodes:add_task_node:208 - ✅ Saved task: Họp
+2025-11-30 00:01:00.118 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, AI Calendar đã ghi lại công việc của Anh/Chị n...
+2025-11-30 00:02:08.247 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-30 00:02:08.251 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'ngày mai tôi có việc gì không', 'thread_id': 'thread_1764435621741', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý thời gian của Anh/Chị. Em ở đây để giúp Anh/Chị quản lý thời gian và sắp xếp công việc một cách hiệu quả. Anh/Chị có gì muốn hỏi hoặc muốn em giúp đỡ không?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị có muốn thêm công việc mới không ạ?'}, {'role': 'user', 'content': 'thêm lịch họp vào 8h sáng giúp tôi'}, {'role': 'assistant', 'content': 'Dạ, AI Calendar đã ghi lại công việc của Anh/Chị như sau:\n- Họp (ngày: 2025-11-30)'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-30 00:02:08.253 | INFO     | __main__:chat:72 - 📨 Message: ngày mai tôi có việc gì không...
+2025-11-30 00:02:08.255 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:08.256 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435621741
+2025-11-30 00:02:08.268 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:08.272 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-30 00:02:09.502 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-30 00:02:09.506 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-30 00:02:09.506 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='ngày mai tôi có việc gì không'
+2025-11-30 00:02:09.509 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-30 00:02:09.516 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-30 00:02:09.723 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-30 00:02:09.730 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:84 - 🔎 Detected time scope: today
+2025-11-30 00:02:09.731 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:90 - 🔍 Querying tasks for date: 2025-11-30 (scope: today)
+2025-11-30 00:02:09.732 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:94 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-30 00:02:09.732 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:95 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-30 00:02:09.732 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:117 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:10.788 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:125 - ✅ Found 1 tasks for scope: today (date: 2025-11-30, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-30 00:02:10.788 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - 📋 Tasks found:
+2025-11-30 00:02:10.788 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:131 -    1. Họp | date: 2025-11-30 | time: None | completed: False
+2025-11-30 00:02:11.029 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:240 - ✅ LLM generated reply based on 1 tasks
+2025-11-30 00:02:11.037 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: Họp với ưu tiê...
+2025-11-30 00:02:38.338 | INFO     | __main__:chat:66 - 📥 Received request - user_id type: <class 'str'>, value: '05b180d3-bc21-48a4-bd26-f09bbdb98da7'
+2025-11-30 00:02:38.338 | INFO     | __main__:chat:67 - 📥 Full request model dump: {'message': 'ngày 31-11-2025 tôi có việc gì không', 'thread_id': 'thread_1764435621741', 'history': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Dạ, chào Anh/Chị! Em là AI Calendar, trợ lý thời gian của Anh/Chị. Em ở đây để giúp Anh/Chị quản lý thời gian và sắp xếp công việc một cách hiệu quả. Anh/Chị có gì muốn hỏi hoặc muốn em giúp đỡ không?'}, {'role': 'user', 'content': 'hôm nay tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị chưa có công việc nào. Anh/Chị có muốn thêm công việc mới không ạ?'}, {'role': 'user', 'content': 'thêm lịch họp vào 8h sáng giúp tôi'}, {'role': 'assistant', 'content': 'Dạ, AI Calendar đã ghi lại công việc của Anh/Chị như sau:\n- Họp (ngày: 2025-11-30)'}, {'role': 'user', 'content': 'ngày mai tôi có việc gì không'}, {'role': 'assistant', 'content': 'Dạ, hôm nay Anh/Chị có 1 công việc: Họp với ưu tiên trung bình.'}], 'user_id': '05b180d3-bc21-48a4-bd26-f09bbdb98da7'}
+2025-11-30 00:02:38.343 | INFO     | __main__:chat:72 - 📨 Message: ngày 31-11-2025 tôi có việc gì không...
+2025-11-30 00:02:38.344 | INFO     | __main__:chat:73 - 👤 User ID: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:38.344 | INFO     | __main__:chat:74 - 🧵 Thread ID: thread_1764435621741
+2025-11-30 00:02:38.344 | INFO     | __main__:chat:113 - ✅ Adding user_id to graph_input: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:38.344 | INFO     | __main__:chat:117 - 🔍 Graph input keys: ['messages', 'user_id']
+2025-11-30 00:02:39.250 | INFO     | genai.time_management_agent.nodes.router:router_node:146 - ✅ Parsed topic: get_tasks (confidence: 1.0)
+2025-11-30 00:02:39.254 | INFO     | genai.time_management_agent.nodes.router:router_node:179 - Topic: None
+2025-11-30 00:02:39.254 | INFO     | genai.time_management_agent.nodes.router:router_node:185 - New Topic: name='get_tasks' confidence=1.0 context='ngày 31-11-2025 tôi có việc gì không'
+2025-11-30 00:02:39.257 | INFO     | genai.time_management_agent.nodes.flow_controller:flow_controller_node:14 - Selected Flow: get_tasks
+2025-11-30 00:02:39.265 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:32 - 🧩 get_tasks_node called.
+2025-11-30 00:02:39.474 | ERROR    | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:81 - ⚠️ JSON parsing error in get_tasks_node: Expecting value: line 1 column 1 (char 0)
+2025-11-30 00:02:39.474 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:84 - 🔎 Detected time scope: today
+2025-11-30 00:02:39.474 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:90 - 🔍 Querying tasks for date: 2025-11-30 (scope: today)
+2025-11-30 00:02:39.474 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:94 - 🔍 get_tasks_node - state keys: ['messages', 'human_input', 'topic', 'selected_flow', 'ai_reply', 'user_id']
+2025-11-30 00:02:39.474 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:95 - 🔍 get_tasks_node - user_id from state: 05b180d3-bc21-48a4-bd26-f09bbdb98da7 (type: <class 'str'>)
+2025-11-30 00:02:39.480 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:117 - 🔍 Filtering by user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7
+2025-11-30 00:02:40.463 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:125 - ✅ Found 1 tasks for scope: today (date: 2025-11-30, user_id: 05b180d3-bc21-48a4-bd26-f09bbdb98da7)
+2025-11-30 00:02:40.466 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:129 - 📋 Tasks found:
+2025-11-30 00:02:40.467 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:131 -    1. Họp | date: 2025-11-30 | time: None | completed: False
+2025-11-30 00:02:40.711 | INFO     | genai.time_management_agent.nodes.subgraph.get_tasks_nodes:get_tasks_node:240 - ✅ LLM generated reply based on 1 tasks
+2025-11-30 00:02:40.726 | INFO     | __main__:chat:148 - ✅ Response generated: Dạ, hôm nay Anh/Chị có 1 công việc: Họp với mức độ...

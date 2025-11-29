@@ -1,0 +1,316 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Simple, friendly theme for young users - bright and approachable colors */
+  --background: oklch(0.99 0.005 120);
+  --foreground: oklch(0.2 0.015 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.015 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.015 240);
+  /* Bright friendly blue - modern and approachable */
+  --primary: oklch(0.6 0.18 220);
+  --primary-foreground: oklch(0.99 0.005 120);
+  /* Soft warm pink - playful and energetic */
+  --secondary: oklch(0.7 0.15 350);
+  --secondary-foreground: oklch(0.99 0.005 120);
+  /* Softer muted tones */
+  --muted: oklch(0.97 0.005 240);
+  --muted-foreground: oklch(0.45 0.01 240);
+  /* Cheerful yellow-orange accent */
+  --accent: oklch(0.75 0.15 60);
+  --accent-foreground: oklch(0.2 0.015 240);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 120);
+  /* Softer borders */
+  --border: oklch(0.94 0.005 240);
+  --input: oklch(0.94 0.005 240);
+  --ring: oklch(0.6 0.18 220);
+  /* Simplified chart colors - friendly palette */
+  --chart-1: oklch(0.6 0.18 220);
+  --chart-2: oklch(0.7 0.15 350);
+  --chart-3: oklch(0.75 0.15 60);
+  --chart-4: oklch(0.65 0.15 160);
+  --chart-5: oklch(0.7 0.15 280);
+  /* Slightly larger radius for friendlier feel */
+  --radius: 1.25rem;
+  --sidebar: oklch(0.99 0.005 120);
+  --sidebar-foreground: oklch(0.2 0.015 240);
+  --sidebar-primary: oklch(0.6 0.18 220);
+  --sidebar-primary-foreground: oklch(0.99 0.005 120);
+  --sidebar-accent: oklch(0.97 0.005 240);
+  --sidebar-accent-foreground: oklch(0.2 0.015 240);
+  --sidebar-border: oklch(0.94 0.005 240);
+  --sidebar-ring: oklch(0.6 0.18 220);
+}
+
+/* TipTap Editor Customization - Giống Notion, không có border radius */
+.tiptap-wrapper {
+  border-radius: 0 !important;
+  background: var(--background);
+  border: none !important;
+}
+
+.tiptap-content {
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* TipTap Editor Styles - Notion style */
+.tiptap-editor {
+  outline: none;
+  border-radius: 0 !important;
+  padding: 0;
+  min-height: 200px;
+}
+
+.tiptap-editor :global(p) {
+  margin: 1.25rem 0;
+  line-height: 2;
+  font-size: 24px;
+}
+
+.tiptap-editor :global(p.is-editor-empty:first-child::before) {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--muted-foreground);
+  pointer-events: none;
+  height: 0;
+}
+
+/* Heading styles - apply to both global and direct selectors with high specificity */
+.tiptap-content h1,
+.tiptap-content h2,
+.tiptap-content h3,
+.tiptap-content .ProseMirror h1,
+.tiptap-content .ProseMirror h2,
+.tiptap-content .ProseMirror h3,
+.tiptap-editor h1,
+.tiptap-editor h2,
+.tiptap-editor h3,
+.tiptap-editor :global(h1),
+.tiptap-editor :global(h2),
+.tiptap-editor :global(h3),
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  font-size: 4.5rem !important;
+  font-weight: 700 !important;
+  margin: 2rem 0 !important;
+  line-height: 1.2 !important;
+  color: var(--foreground) !important;
+  display: block !important;
+}
+
+.tiptap-content h2,
+.tiptap-content .ProseMirror h2,
+.tiptap-editor h2,
+.tiptap-editor :global(h2),
+.ProseMirror h2 {
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
+  margin: 1.75rem 0 !important;
+  line-height: 1.3 !important;
+}
+
+.tiptap-content h3,
+.tiptap-content .ProseMirror h3,
+.tiptap-editor h3,
+.tiptap-editor :global(h3),
+.ProseMirror h3 {
+  font-size: 2.75rem !important;
+  font-weight: 600 !important;
+  margin: 1.5rem 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* Ensure heading styles apply to all heading elements in editor */
+.tiptap-content .tiptap-editor h1,
+.tiptap-content .tiptap-editor h2,
+.tiptap-content .tiptap-editor h3,
+.tiptap-content .ProseMirror h1,
+.tiptap-content .ProseMirror h2,
+.tiptap-content .ProseMirror h3 {
+  /* Don't override - let the heading styles above apply */
+}
+
+.tiptap-editor :global(ul),
+.tiptap-editor :global(ol) {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap-editor :global(li) {
+  margin: 0.25rem 0;
+}
+
+.tiptap-editor :global(blockquote) {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.tiptap-editor :global(code) {
+  background: var(--muted);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: 'Courier New', monospace;
+}
+
+.tiptap-editor :global(pre) {
+  background: var(--muted);
+  padding: 1rem;
+  border-radius: 0;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.tiptap-editor :global(pre code) {
+  background: transparent;
+  padding: 0;
+}
+
+/* Table Styles - Giống Notion */
+.tiptap-table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.tiptap-table :global(td),
+.tiptap-table :global(th) {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  min-width: 100px;
+  position: relative;
+  border-radius: 0 !important;
+}
+
+.tiptap-table :global(th) {
+  background: var(--muted);
+  font-weight: 600;
+}
+
+.tiptap-table :global(tr:hover) {
+  background: var(--muted/50);
+}
+
+/* Image Styles */
+.tiptap-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0 !important;
+  margin: 1rem 0;
+}
+
+/* Link Styles */
+.tiptap-link {
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tiptap-link:hover {
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/* Toolbar Button Active State */
+.tiptap-wrapper button[data-active="true"] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.dark {
+  /* Dark mode - softer and friendlier for young users */
+  --background: oklch(0.13 0.01 240);
+  --foreground: oklch(0.97 0.005 120);
+  --card: oklch(0.17 0.01 240);
+  --card-foreground: oklch(0.97 0.005 120);
+  --popover: oklch(0.17 0.01 240);
+  --popover-foreground: oklch(0.97 0.005 120);
+  /* Brighter primary in dark mode */
+  --primary: oklch(0.65 0.18 220);
+  --primary-foreground: oklch(0.13 0.01 240);
+  --secondary: oklch(0.72 0.15 350);
+  --secondary-foreground: oklch(0.13 0.01 240);
+  --muted: oklch(0.22 0.01 240);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --accent: oklch(0.75 0.15 60);
+  --accent-foreground: oklch(0.13 0.01 240);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.97 0.005 120);
+  --border: oklch(0.25 0.01 240);
+  --input: oklch(0.25 0.01 240);
+  --ring: oklch(0.65 0.18 220);
+  --chart-1: oklch(0.65 0.18 220);
+  --chart-2: oklch(0.72 0.15 350);
+  --chart-3: oklch(0.75 0.15 60);
+  --chart-4: oklch(0.68 0.15 160);
+  --chart-5: oklch(0.7 0.15 280);
+  --sidebar: oklch(0.17 0.01 240);
+  --sidebar-foreground: oklch(0.97 0.005 120);
+  --sidebar-primary: oklch(0.65 0.18 220);
+  --sidebar-primary-foreground: oklch(0.13 0.01 240);
+  --sidebar-accent: oklch(0.22 0.01 240);
+  --sidebar-accent-foreground: oklch(0.97 0.005 120);
+  --sidebar-border: oklch(0.25 0.01 240);
+  --sidebar-ring: oklch(0.65 0.18 220);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

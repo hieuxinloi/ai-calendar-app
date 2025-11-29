@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+frontend/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -10,13 +11,31 @@
 !.yarn/releases
 !.yarn/versions
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.log
+AI_service/timemanage-agent-backend/logs/
+AI_service/timemanage-agent-backend/src/**/__pycache__/
+AI_service/timemanage-agent-backend/**/*.pyc
+venv/
+env/
+ENV/
+
 # testing
 /coverage
 
 # next.js
-.next/
+/.next/
 /out/
 frontend/.next/
+frontend/out/
 
 # production
 /build
@@ -41,17 +60,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-*.log
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+frontend/.next/
+.next/

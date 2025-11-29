@@ -105,20 +105,20 @@ export function MoodSelector({ date, onMoodSaved }: MoodSelectorProps) {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-5 gap-2">
+    <div className="space-y-3 sm:space-y-4">
+      <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
         {moods.map((mood) => (
           <button
             key={mood.value}
             onClick={() => setSelectedMood(mood.value)}
               className={cn(
-                "aspect-square rounded-xl flex flex-col items-center justify-center gap-1 transition-all hover:scale-105",
+                "aspect-square rounded-lg sm:rounded-xl flex flex-col items-center justify-center gap-0.5 sm:gap-1 transition-all hover:scale-105 active:scale-95",
                 mood.color,
-                selectedMood === mood.value && "ring-2 ring-primary ring-offset-2 ring-offset-background scale-105",
+                selectedMood === mood.value && "ring-2 ring-primary ring-offset-1 sm:ring-offset-2 ring-offset-background scale-105",
               )}
           >
-            <span className="text-2xl">{mood.emoji}</span>
-            <span className="text-xs font-medium">{mood.label}</span>
+            <span className="text-lg sm:text-xl lg:text-2xl">{mood.emoji}</span>
+            <span className="text-[10px] sm:text-xs font-medium leading-tight">{mood.label}</span>
           </button>
         ))}
       </div>

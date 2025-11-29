@@ -51,8 +51,8 @@ export function ThemeSelector() {
           <span className="sr-only">Chọn theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-64 max-h-[600px] overflow-y-auto">
-        <div className="px-2 py-1.5 text-sm font-semibold sticky top-0 bg-background z-10 border-b">
+      <DropdownMenuContent align="end" className="w-64 sm:w-72 max-h-[400px] sm:max-h-[600px] overflow-y-auto">
+        <div className="px-2 py-1.5 text-xs sm:text-sm font-semibold sticky top-0 bg-background z-10 border-b">
           Chọn theme ({themes.length})
         </div>
         {themes.map((themeOption) => (
@@ -61,16 +61,16 @@ export function ThemeSelector() {
             onClick={() => setTheme(themeOption.id)}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <div className="flex -space-x-1 overflow-hidden">
+            <div className="flex -space-x-0.5 sm:-space-x-1 overflow-hidden flex-shrink-0">
               {themeOption.colors.map((color, i) => (
                 <div
                   key={i}
-                  className="w-4 h-4 rounded-full border border-border"
+                  className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-border"
                   style={{ backgroundColor: color }}
                 />
               ))}
             </div>
-            <span className="flex-1 text-sm">{themeOption.name}</span>
+            <span className="flex-1 text-xs sm:text-sm truncate">{themeOption.name}</span>
             {theme === themeOption.id && (
               <Check className="w-4 h-4 text-primary" />
             )}

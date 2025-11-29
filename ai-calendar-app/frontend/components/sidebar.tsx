@@ -330,13 +330,22 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
   ]
 
   return (
-    <aside
-      className={cn(
-        "fixed left-0 top-0 h-full w-80 bg-sidebar border-r border-sidebar-border z-40 transition-transform duration-200",
-        "lg:translate-x-0",
-        isOpen ? "translate-x-0" : "-translate-x-full"
+    <>
+      {/* Backdrop overlay for mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          onClick={onClose}
+          aria-hidden="true"
+        />
       )}
-    >
+      <aside
+        className={cn(
+          "fixed left-0 top-0 h-full w-80 bg-sidebar border-r border-sidebar-border z-40 transition-transform duration-200",
+          "lg:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="p-4 border-b border-sidebar-border">
@@ -566,6 +575,7 @@ export function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         </div>
       </div>
     </aside>
+    </>
   )
 }
 

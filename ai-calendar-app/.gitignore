@@ -14,8 +14,9 @@
 /coverage
 
 # next.js
-/.next/
+.next/
 /out/
+frontend/.next/
 
 # production
 /build
@@ -39,3 +40,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

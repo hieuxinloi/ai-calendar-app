@@ -453,6 +453,9 @@
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
+  .mr-1\.5 {
+    margin-right: calc(var(--spacing) * 1.5);
+  }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
@@ -1035,6 +1038,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-visible {
+    overflow: visible;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -1052,6 +1058,9 @@
   }
   .rounded-md {
     border-radius: calc(var(--radius) - 2px);
+  }
+  .rounded-none {
+    border-radius: 0;
   }
   .rounded-sm {
     border-radius: calc(var(--radius) - 4px);
@@ -1582,6 +1591,10 @@
   }
   .text-\[10px\] {
     font-size: 10px;
+  }
+  .leading-\[1\.1\] {
+    --tw-leading: 1.1;
+    line-height: 1.1;
   }
   .leading-none {
     --tw-leading: 1;
@@ -2497,6 +2510,11 @@
       margin-right: calc(var(--spacing) * 2);
     }
   }
+  .sm\:mr-3 {
+    @media (width >= 40rem) {
+      margin-right: calc(var(--spacing) * 3);
+    }
+  }
   .sm\:mb-1 {
     @media (width >= 40rem) {
       margin-bottom: calc(var(--spacing) * 1);
@@ -2525,6 +2543,11 @@
   .sm\:ml-2 {
     @media (width >= 40rem) {
       margin-left: calc(var(--spacing) * 2);
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
     }
   }
   .sm\:inline {
@@ -2789,6 +2812,11 @@
   .sm\:px-4 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 4);
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
     }
   }
   .sm\:py-4 {
@@ -3427,6 +3455,46 @@
 .tiptap-link:hover {
   color: var(--primary);
   opacity: 0.8;
+}
+.tiptap-editor :global(.inline-page-block),
+.ProseMirror :global(.inline-page-block) {
+  margin: 1.25rem 0;
+  padding: 0;
+}
+.tiptap-editor :global(.inline-page-link),
+.ProseMirror :global(.inline-page-link) {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  transition: all 0.2s;
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+}
+.tiptap-editor :global(.inline-page-icon),
+.ProseMirror :global(.inline-page-icon) {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.tiptap-editor :global(.inline-page-title),
+.ProseMirror :global(.inline-page-title) {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  flex: 1;
+}
+.tiptap-editor :global(.inline-page-link:hover),
+.ProseMirror :global(.inline-page-link:hover) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.tiptap-editor :global(.inline-page-link:hover .inline-page-title),
+.ProseMirror :global(.inline-page-link:hover .inline-page-title) {
+  color: var(--foreground);
 }
 .tiptap-wrapper button[data-active="true"] {
   background: var(--primary);

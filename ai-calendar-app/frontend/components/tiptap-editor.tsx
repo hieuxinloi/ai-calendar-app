@@ -13,7 +13,8 @@ import { TextAlign } from "@tiptap/extension-text-align"
 import { Image } from "@tiptap/extension-image"
 import { Link } from "@tiptap/extension-link"
 import { SlashCommand } from "./slash-command"
-import { useEffect, useMemo, useRef } from "react"
+import { InlinePage } from "./inline-page-node"
+import { useEffect, useMemo, useRef, forwardRef, useImperativeHandle } from "react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
@@ -46,11 +47,16 @@ interface TipTapEditorProps {
   editable?: boolean
 }
 
-export function TipTapEditor({ 
+export interface TipTapEditorRef {
+  getEditor: () => any
+  updateInlinePageTitle: (pageId: string, newTitle: string) => void
+}
+
+export const TipTapEditor = forwardRef<TipTapEditorRef, TipTapEditorProps>(({ 
   initialContent, 
   onChange,
   editable = true 
-}: TipTapEditorProps) {
+}, ref) => {
   // Parse initial content
   const parsedContent = useMemo(() => {
     if (!initialContent) return ""
@@ -119,6 +125,7 @@ export function TipTapEditor({
           class: 'tiptap-link',
         },
       }),
+      InlinePage,
       SlashCommand,
     ],
     content: parsedContent,
@@ -158,6 +165,38 @@ export function TipTapEditor({
       },
     },
   })
+
+  // Expose editor instance and methods via ref
+  useImperativeHandle(ref, () => ({
+    getEditor: () => editor,
+    updateInlinePageTitle: (pageId: string, newTitle: string) => {
+      if (!editor) return
+      
+      // Find all inline page nodes and update matching ones
+      const tr = editor.state.tr
+      let updated = false
+      
+      editor.state.doc.descendants((node: any, pos: number) => {
+        if (node.type.name === 'inlinePage' && node.attrs.pageId === pageId && node.attrs.title !== newTitle) {
+          tr.setNodeMarkup(pos, undefined, {
+            ...node.attrs,
+            title: newTitle
+          })
+          updated = true
+        }
+      })
+      
+      if (updated) {
+        editor.view.dispatch(tr)
+        // Trigger onChange to save
+        const html = editor.getHTML()
+        if (onChange && html !== lastContentRef.current) {
+          lastContentRef.current = html
+          onChange(html)
+        }
+      }
+    },
+  }), [editor, onChange])
 
   // Inject heading styles to ensure they're applied
   useEffect(() => {
@@ -589,5 +628,7 @@ export function TipTapEditor({
       </div>
     </div>
   )
-}
+})
+
+TipTapEditor.displayName = "TipTapEditor"
 

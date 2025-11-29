@@ -222,6 +222,53 @@
   opacity: 0.8;
 }
 
+/* Inline Page Block - Page con trong editor */
+.tiptap-editor :global(.inline-page-block),
+.ProseMirror :global(.inline-page-block) {
+  margin: 1.25rem 0;
+  padding: 0;
+}
+
+.tiptap-editor :global(.inline-page-link),
+.ProseMirror :global(.inline-page-link) {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  transition: all 0.2s;
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+.tiptap-editor :global(.inline-page-icon),
+.ProseMirror :global(.inline-page-icon) {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tiptap-editor :global(.inline-page-title),
+.ProseMirror :global(.inline-page-title) {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  flex: 1;
+}
+
+.tiptap-editor :global(.inline-page-link:hover),
+.ProseMirror :global(.inline-page-link:hover) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.tiptap-editor :global(.inline-page-link:hover .inline-page-title),
+.ProseMirror :global(.inline-page-link:hover .inline-page-title) {
+  color: var(--foreground);
+}
+
 /* Toolbar Button Active State */
 .tiptap-wrapper button[data-active="true"] {
   background: var(--primary);

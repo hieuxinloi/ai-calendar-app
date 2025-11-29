@@ -20,9 +20,18 @@ load_dotenv(find_dotenv())
 app = FastAPI(title="AI Time Management Agent API", version="1.0.0")
 
 # CORS configuration
+# Allow requests from localhost (dev) and Vercel domains (production)
+vercel_domain = os.getenv("VERCEL_URL", "https://ai-calendar-app-v3.vercel.app")
+allowed_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://ai-calendar-app-v3.vercel.app",
+    "https://*.vercel.app",  # Allow all Vercel preview deployments
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # Next.js default port
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

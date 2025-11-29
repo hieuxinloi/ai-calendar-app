@@ -484,11 +484,28 @@ const getSuggestionItems = ({ query, editor }: { query?: string; editor?: any })
           })
           .then(res => res.json())
           .then(newNote => {
-            if (newNote?.id) {
-              // Insert link to child page
-              editor.chain().focus().insertContent(`<a href="/pages/${newNote.id}">Untitled</a>`).run()
-              // Reload page to show new child
-              setTimeout(() => window.location.reload(), 500)
+            if (newNote?.id && editor) {
+              // Use the custom InlinePage command
+              try {
+                if (editor.chain && typeof editor.chain === 'function') {
+                  editor.chain().focus().setInlinePage({ 
+                    pageId: newNote.id, 
+                    title: "Untitled" 
+                  }).run()
+                } else {
+                  // Fallback to HTML if command not available
+                  const pageBlockHTML = `<p class="inline-page-block" data-page-id="${newNote.id}"><a href="/pages/${newNote.id}" target="_blank" rel="noopener noreferrer" class="inline-page-link"><span class="inline-page-icon">📄</span><span class="inline-page-title">Untitled</span></a></p>`
+                  setTimeout(() => {
+                    try {
+                      editor.chain().focus().insertContent(pageBlockHTML).run()
+                    } catch (error) {
+                      console.error("Error inserting page block:", error)
+                    }
+                  }, 100)
+                }
+              } catch (error) {
+                console.error("Error inserting inline page:", error)
+              }
             }
           })
           .catch(error => {
